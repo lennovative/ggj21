@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Plattform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 537.77, 10 )
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 308.806, 229.432 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 518.771, 592.41 )
+shape = SubResource( 1 )
+
+[node name="Plattform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 186.465, 544.097 )
+
+[node name="Plattform2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 811.988, 542.907 )
+
+[node name="Plattform3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 552.741, 541.718 )
+
+[node name="Plattform4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 551.551, 452.528 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 247.135, 959.986 )
+shape = SubResource( 1 )
+
+[node name="Plattform5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 206.669, 907.183 )
+
+[node name="Plattform6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 675.047, 912.729 )
+
+[node name="Plattform7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 581.925, 913.784 )
+
+[node name="Plattform8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 578.49, 824.594 )
+
+[node name="Plattform9" parent="." instance=ExtResource( 1 )]
+position = Vector2( -224.023, 820.227 )
+
+[node name="Plattform10" parent="." instance=ExtResource( 1 )]
+position = Vector2( -216.607, 912.4 )
