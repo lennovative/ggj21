@@ -34,3 +34,8 @@ func _physics_process(delta):
 			self.position.y += 10
 	vel.y += gravity * delta
 	vel = move_and_slide(vel, Vector2(0, -1))
+	
+	#rotate light
+	var mouse = get_global_mouse_position()
+	var angle = self.get_angle_to(mouse) - PI / 2
+	get_node("light_cone").set_rotation(angle)
