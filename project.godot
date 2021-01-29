@@ -19,6 +19,11 @@ config/name="ggj21"
 run/main_scene="res://Scenes/Level.tscn"
 config/icon="res://Assets/icon.png"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [input]
 
 left_button={

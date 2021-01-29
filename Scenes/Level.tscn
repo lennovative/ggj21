@@ -10,58 +10,55 @@ extents = Vector2( 537.77, 10 )
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 308.806, 229.432 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 518.771, 592.41 )
-shape = SubResource( 1 )
+position = Vector2( 487.076, 1077.06 )
 
 [node name="Plattform" parent="." instance=ExtResource( 1 )]
-position = Vector2( 186.465, 544.097 )
+position = Vector2( 3193.51, 860.274 )
 
 [node name="Plattform2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 811.988, 542.907 )
+position = Vector2( 2985.07, 1023.32 )
 
 [node name="Plattform3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 552.741, 541.718 )
+position = Vector2( 3017.67, 945.804 )
 
 [node name="Plattform4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 551.551, 452.528 )
+position = Vector2( 3011.99, 856.614 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 247.135, 959.986 )
+position = Vector2( 2496.43, 1257.43 )
+scale = Vector2( 5, 1 )
 shape = SubResource( 1 )
 
 [node name="Plattform5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 206.669, 907.183 )
+position = Vector2( 3206.99, 1206.54 )
 
 [node name="Plattform6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 713.211, 910.484 )
+position = Vector2( 3007.52, 1108.04 )
 
 [node name="Plattform7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 581.925, 913.784 )
+position = Vector2( 3212.25, 772.514 )
 
 [node name="Plattform8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 578.49, 824.594 )
+position = Vector2( 3003.01, 1201.74 )
 
 [node name="Plattform9" parent="." instance=ExtResource( 1 )]
-position = Vector2( -224.023, 820.227 )
+position = Vector2( 3210.2, 1028.77 )
 
 [node name="Plattform10" parent="." instance=ExtResource( 1 )]
-position = Vector2( -216.607, 912.4 )
+position = Vector2( 3227.71, 1117.58 )
 
 [node name="Plattform11" parent="." instance=ExtResource( 1 )]
-position = Vector2( -192.541, 732.735 )
+position = Vector2( 3214.77, 934.55 )
 
 [node name="Wall" parent="." instance=ExtResource( 3 )]
-position = Vector2( -285.318, 656.808 )
+position = Vector2( 23.3807, 656.808 )
+scale = Vector2( 1, 3 )
 
 [node name="Wall2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1054.9, 299.865 )
+position = Vector2( 5068.33, 746.502 )
+scale = Vector2( 1, 3 )
 
 [node name="Wall3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 790, 908.239 )
+position = Vector2( 3380.64, 944.158 )
