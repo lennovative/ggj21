@@ -57,6 +57,8 @@ func item_loop():
 			current_item = item.name
 			item.queue_free()
 			print("item collected")
+			
+			
 
 func item_in_range(item):
 	items_in_range.append(item)
