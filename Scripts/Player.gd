@@ -60,7 +60,6 @@ func light_loop():
 
 func item_loop():
 	if Input.is_action_just_pressed("collect"):
-		print("e pressed")
 		if current_item != null:
 			drop_item()
 		elif not items_in_range.empty():
@@ -71,7 +70,6 @@ func pickup_item():
 	var item = items_in_range.pop_front()
 	current_item = item.name
 	item.queue_free()
-	print("item collected")
 	item_effects()
 
 func drop_item():
@@ -81,7 +79,7 @@ func drop_item():
 	get_parent().add_child(spawn_item)
 	current_item = null
 	item_effects()
-	print("item dropped")
+	drop_timer.stop()
 
 # sets the current item's effect:
 func item_effects():
