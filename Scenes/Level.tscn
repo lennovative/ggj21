@@ -133,7 +133,7 @@ texture = ExtResource( 7 )
 
 [node name="inventory_background" type="Sprite" parent="Inventory"]
 position = Vector2( 1175.02, 571.195 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.6, 0.6 )
 z_index = 10
 texture = ExtResource( 11 )
 

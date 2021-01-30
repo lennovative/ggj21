@@ -78,11 +78,11 @@ func delete_children(node):
 		n.queue_free()
 
 func update_inventory_sprite():
+	var item_sprite = level.get_node("Inventory").get_node("item_sprite")
 	if current_item == null:
-		delete_children(get_parent().get_node("Inventory").get_node("item_sprite"))
+		delete_children(item_sprite)
 	else:
 		var item_scene = load("res://Scenes/Items/item_" + current_item.type + ".tscn").instance()
-		var item_sprite = get_parent().get_node("Inventory").get_node("item_sprite")
 		item_sprite.add_child(item_scene)
 		if current_item.type == "cat":
 			item_sprite.scale.x = 0.5
