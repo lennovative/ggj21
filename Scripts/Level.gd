@@ -57,7 +57,7 @@ func _ready():
 	spawnItem("vase_green", Vector2(-4500, 500))
 #	spawnItem("wrench", Vector2(-, ))
 	spawnItem("yarn", Vector2(750, 1100))
-	
+	spawnItem("walking_aid", Vector2(-200, 1100))
 
 	
 func _process(delta):
