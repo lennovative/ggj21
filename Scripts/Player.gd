@@ -64,6 +64,12 @@ func item_loop():
 			drop_item()
 		elif not items_in_range.empty():
 			pickup_item()
+			
+	#drop cat if yarn is reached
+	if current_item == "cat":
+		for range_item in items_in_range:
+			if range_item.name == "yarn":
+				drop_item()
 
 
 func pickup_item():
@@ -79,16 +85,23 @@ func drop_item():
 	get_parent().add_child(spawn_item)
 	current_item = null
 	item_effects()
-	drop_timer.stop()
 
 # sets the current item's effect:
 func item_effects():
 	match current_item:
 		"cat":
 			drop_timer.start(rand_range(5.0, 10.0))
+		"coffee":
+			walkspeed = 800
+		"glasses":
+			Globals.light_level = Color(0.2,0.2,0.2,1)
+		"vase": 
+			jumpSpeed = 0
 		_:
-			#reset efects
-			pass
+			walkspeed = 400
+			drop_timer.stop()
+			Globals.light_level = Color.black
+			jumpSpeed = 800
 
 
 func item_in_range(item):
