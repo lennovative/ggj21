@@ -3,7 +3,7 @@ extends KinematicBody2D
 var vel = Vector2()
 var gravity = 1200
 var walkspeed = 400
-var jumpSpeed = 600
+var jumpSpeed = 800
 var acc = 1700
 var items_in_range = []
 var current_item = null
