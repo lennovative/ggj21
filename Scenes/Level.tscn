@@ -138,3 +138,6 @@ texture = ExtResource( 11 )
 [node name="item_sprite" type="Node2D" parent="Inventory"]
 position = Vector2( 1175.47, 569.16 )
 z_index = 9
+
+[node name="Echolocate_timer" type="Timer" parent="."]
+[connection signal="timeout" from="Echolocate_timer" to="." method="start_echolocate"]

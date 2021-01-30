@@ -66,7 +66,7 @@ func item_loop():
 			pickup_item()
 			
 	#drop cat if yarn is reached
-	if current_item == "cat":
+	if current_item != null && current_item.type == "cat":
 		for range_item in items_in_range:
 			if range_item.type == "yarn":
 				drop_item()
@@ -80,10 +80,10 @@ func update_inventory_sprite():
 	if current_item == null:
 		delete_children(get_parent().get_node("Inventory").get_node("item_sprite"))
 	else:
-		var item_scene = load("res://Scenes/Items/item_" + current_item + ".tscn").instance()
+		var item_scene = load("res://Scenes/Items/item_" + current_item.type + ".tscn").instance()
 		var item_sprite = get_parent().get_node("Inventory").get_node("item_sprite")
 		item_sprite.add_child(item_scene)
-		if current_item == "cat":
+		if current_item.type == "cat":
 			item_sprite.scale.x = 0.5
 			item_sprite.scale.y = 0.5
 		else:
@@ -93,43 +93,49 @@ func update_inventory_sprite():
 func pickup_item():
 	#breakpoint
 	var item = items_in_range.pop_front()
-	current_item = item.type
-	item.queue_free()
+	current_item = item
+	get_parent().remove_child(item)
 	update_inventory_sprite()
 	item_effects()
 	#print("picked item: " + current_item)
 
 func drop_item():
 	#print("dropping item: " + current_item)
-	var spawn_item = item.instance()
-	spawn_item.init(current_item)
-	spawn_item.set_position(self.get_position())
-	get_parent().add_child(spawn_item)
+	#var spawn_item = item.instance()
+	#spawn_item.init(current_item)
+	current_item.set_position(self.get_position())
+	get_parent().add_child(current_item)
 	current_item = null
 	update_inventory_sprite()
 	item_effects()
 
 # sets the current item's effect:
 func item_effects():
-	match current_item:
-		"cat":
-			drop_timer.start(rand_range(5.0, 10.0))
-		"coffee":
-			walkspeed = 800
-			get_node("AnimationPlayer").set_speed_scale(2.0)
-		"glasses":
-			Globals.light_level = Color(0.2,0.2,0.2,1)
-		"vase": 
-			jumpSpeed = 0
-		"radio":
-			get_node("RadioCommPlayer").play()
-		_:
-			walkspeed = 400
-			get_node("AnimationPlayer").set_speed_scale(1.0)
-			drop_timer.stop()
-			Globals.light_level = Color.black
-			jumpSpeed = 800
-			get_node("RadioCommPlayer").stop()
+	if current_item != null:
+		match current_item.type:
+			"cat":
+				drop_timer.start(rand_range(5.0, 10.0))
+			"coffee":
+				walkspeed = 800
+				get_node("AnimationPlayer").set_speed_scale(2.0)
+			"glasses":
+				Globals.light_level = Color(0.2,0.2,0.2,1)
+			"vase": 
+				jumpSpeed = 0
+			"radio":
+				get_node("RadioCommPlayer").play()
+			"echolocator":
+				get_parent().start_echolocate()
+			"spring_shoes":
+				jumpSpeed = 1200
+	else:
+		walkspeed = 400
+		get_node("AnimationPlayer").set_speed_scale(1.0)
+		drop_timer.stop()
+		Globals.light_level = Color.black
+		jumpSpeed = 800
+		get_node("RadioCommPlayer").stop()
+		get_parent().stop_echolocate()
 
 
 func item_in_range(item):
