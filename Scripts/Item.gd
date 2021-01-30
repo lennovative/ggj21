@@ -1,5 +1,6 @@
 extends Area2D
 
+
 func init(type: String):
 	self.name = type
 	var type_subnode = load("res://Scenes/Items/item_" + type + ".tscn").instance()
