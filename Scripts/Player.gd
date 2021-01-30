@@ -11,6 +11,7 @@ var item = load("res://Scenes/Item.tscn")
 onready var drop_timer = get_node("drop_timer")
 var sprite_dir = "right"
 var stop = true
+onready var level = get_node("/root/Level")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -125,7 +126,7 @@ func item_effects():
 			"radio":
 				get_node("RadioCommPlayer").play()
 			"echolocator":
-				get_parent().start_echolocate()
+				level.start_echolocate()
 			"spring_shoes":
 				jumpSpeed = 1200
 	else:
@@ -135,7 +136,7 @@ func item_effects():
 		Globals.light_level = Color.black
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
-		get_parent().stop_echolocate()
+		level.stop_echolocate()
 
 
 func item_in_range(item):
