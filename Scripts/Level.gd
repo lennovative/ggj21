@@ -4,10 +4,6 @@ const GRAVITY = 1200
 
 onready var ambient = get_node("CanvasModulate")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 func get_gravity():
 	return 
 

@@ -71,11 +71,19 @@ func item_loop():
 			if range_item.name == "yarn":
 				drop_item()
 
+func update_inventory_sprite():
+	if current_item == null:
+		get_parent().get_node("Inventory").get_node("item_sprite").visible = false
+	else:
+		get_parent().get_node("Inventory").get_node("item_sprite").visible = true
+		var item_path = load("res://Assets/Graphics/items/item_" + current_item + ".png")
+		get_parent().get_node("Inventory").get_node("item_sprite").set_texture(item_path)
 
 func pickup_item():
 	var item = items_in_range.pop_front()
 	current_item = item.name
 	item.queue_free()
+	update_inventory_sprite()
 	item_effects()
 
 func drop_item():
@@ -84,6 +92,7 @@ func drop_item():
 	spawn_item.set_position(self.get_position())
 	get_parent().add_child(spawn_item)
 	current_item = null
+	update_inventory_sprite()
 	item_effects()
 
 # sets the current item's effect:

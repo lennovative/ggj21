@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Items/Plattform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/BoxStack.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Graphics/Background_locker_room.jpg" type="Texture" id=10]
+[ext_resource path="res://Assets/Graphics/inventory_background.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 537.77, 10 )
@@ -125,3 +126,16 @@ texture = ExtResource( 10 )
 scale = Vector2( 3000, 1000 )
 z_index = -20
 texture = ExtResource( 7 )
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+
+[node name="inventory_background" type="Sprite" parent="Inventory"]
+position = Vector2( 1175.02, 571.195 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 10
+texture = ExtResource( 11 )
+
+[node name="item_sprite" type="Sprite" parent="Inventory"]
+position = Vector2( 1175.47, 569.16 )
+scale = Vector2( 0.45, 0.45 )
+z_index = 9
