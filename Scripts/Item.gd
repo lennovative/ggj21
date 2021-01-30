@@ -1,4 +1,4 @@
-extends Area2D
+extends res://Scenes/Item.tscn
 
 func _ready():
 	name = "item1"
