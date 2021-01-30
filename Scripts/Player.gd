@@ -78,10 +78,10 @@ func pickup_item():
 	current_item = item.type
 	item.queue_free()
 	item_effects()
-	print("picked item: " + current_item)
+	#print("picked item: " + current_item)
 
 func drop_item():
-	print("dropping item: " + current_item)
+	#print("dropping item: " + current_item)
 	var spawn_item = item.instance()
 	spawn_item.init(current_item)
 	spawn_item.set_position(self.get_position())
