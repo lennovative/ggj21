@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 10 ]
+"values": [ 19 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 18 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -113,7 +113,7 @@ position = Vector2( 0.336731, 1.16837 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 5
-frame = 3
+frame = 18
 region_rect = Rect2( 52.5382, -70.0261, 2927.97, 2497.59 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
