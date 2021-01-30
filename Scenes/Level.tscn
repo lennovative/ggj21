@@ -32,7 +32,13 @@ position = Vector2( -738.908, 1147.89 )
 collision_mask = 3
 
 [node name="Plattform3" parent="Objects" instance=ExtResource( 1 )]
-position = Vector2( 3193.07, 1196.59 )
+position = Vector2( 3053.88, 1297.61 )
+z_index = 1
+collision_mask = 3
+
+[node name="Plattform12" parent="Objects" instance=ExtResource( 1 )]
+position = Vector2( 3056.13, 1150.17 )
+z_index = 1
 collision_mask = 3
 
 [node name="Plattform4" parent="Objects" instance=ExtResource( 1 )]
@@ -83,7 +89,7 @@ position = Vector2( -1303.93, 1219.08 )
 position = Vector2( -2383.15, 1218.13 )
 
 [node name="Shelf3" parent="Objects/Shelfs" instance=ExtResource( 6 )]
-position = Vector2( -3457.95, 1218.13 )
+position = Vector2( -3914.61, 1232.4 )
 
 [node name="Shelf4" parent="Objects/Shelfs" instance=ExtResource( 6 )]
 position = Vector2( 3795, 1206.01 )

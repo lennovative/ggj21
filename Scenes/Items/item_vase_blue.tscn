@@ -2,6 +2,6 @@
 
 [ext_resource path="res://Assets/Graphics/items/item_vase.png" type="Texture" id=1]
 
-[node name="item_vase" type="Sprite"]
+[node name="item_vase_blue" type="Sprite"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )

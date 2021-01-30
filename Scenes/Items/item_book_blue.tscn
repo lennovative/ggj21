@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Graphics/items/book.PNG" type="Texture" id=1]
+
+[node name="item_book_blue" type="Sprite"]
+modulate = Color( 0.219608, 0.309804, 0.905882, 1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
