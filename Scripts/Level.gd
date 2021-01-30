@@ -21,6 +21,8 @@ func spawnItem(type:String, position: Vector2):
 func _ready():
 	spawnItem("cat", Vector2(1775, 750))
 	spawnItem("radio", Vector2(-2600, 500))
+	spawnItem("glasses", Vector2(-1300, 800))
+	spawnItem("coffee", Vector2(1050, 1050))
 
 
 
