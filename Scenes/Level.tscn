@@ -1,112 +1,122 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/Plattform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Items/Plattform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/ExitSign.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Graphics/Background_private_new.jpg" type="Texture" id=5]
-[ext_resource path="res://Scenes/Level.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Shelf.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Graphics/flat_grey_4px.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 537.77, 10 )
 
 [node name="Level" type="Node2D"]
-script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 723.809, 1131 )
+position = Vector2( 622.809, 895 )
 
-[node name="Plattform" parent="." instance=ExtResource( 1 )]
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Plattform" parent="Objects" instance=ExtResource( 1 )]
 position = Vector2( 1937.65, 1134.04 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1231.76, 1165.71 )
+[node name="Plattform2" parent="Objects" instance=ExtResource( 1 )]
+position = Vector2( -738.908, 1147.89 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform3" parent="." instance=ExtResource( 1 )]
+[node name="Plattform3" parent="Objects" instance=ExtResource( 1 )]
 position = Vector2( 1472.13, 1194.15 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1237.68, 1010.91 )
+[node name="Plattform4" parent="Objects" instance=ExtResource( 1 )]
+position = Vector2( -807.823, 996.656 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 2496.43, 1257.43 )
-scale = Vector2( 5, 1 )
-shape = SubResource( 1 )
-
-[node name="Plattform5" parent="." instance=ExtResource( 1 )]
+[node name="Plattform5" parent="Objects" instance=ExtResource( 1 )]
 position = Vector2( 1672.99, 1191.71 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform6" parent="." instance=ExtResource( 1 )]
+[node name="Plattform6" parent="Objects" instance=ExtResource( 1 )]
 position = Vector2( 1677.85, 1034.65 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 947.995, 1207.02 )
+[node name="Plattform7" parent="Objects" instance=ExtResource( 1 )]
+position = Vector2( -878.209, 1182.39 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform8" parent="." instance=ExtResource( 1 )]
+[node name="Plattform8" parent="Objects" instance=ExtResource( 1 )]
 position = Vector2( 1938.88, 988.915 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform9" parent="." instance=ExtResource( 1 )]
+[node name="Plattform9" parent="Objects" instance=ExtResource( 1 )]
 position = Vector2( 1682.83, 874.618 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform10" parent="." instance=ExtResource( 1 )]
+[node name="Plattform10" parent="Objects" instance=ExtResource( 1 )]
 position = Vector2( 1939.44, 841.542 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Plattform11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1943.95, 685.004 )
+[node name="Plattform11" parent="Objects" instance=ExtResource( 1 )]
+position = Vector2( -4885.81, 1193 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Wall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 23.3807, 656.808 )
-scale = Vector2( 1, 3 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="Wall2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5068.33, 746.502 )
-scale = Vector2( 1, 3 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="Wall3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2100.75, 981.913 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="ExitSign" parent="." instance=ExtResource( 4 )]
-position = Vector2( 610.884, 670.902 )
+[node name="ExitSign" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( -39.2239, 383.731 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Ambient-light" type="CanvasModulate" parent="."]
+[node name="Shelfs" type="Node2D" parent="Objects"]
+
+[node name="Shelf" parent="Objects/Shelfs" instance=ExtResource( 6 )]
+position = Vector2( -1303.93, 1219.08 )
+z_index = -1
+
+[node name="Shelf2" parent="Objects/Shelfs" instance=ExtResource( 6 )]
+position = Vector2( -2383.15, 1218.13 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0, 0, 0, 1 )
 
-[node name="Background_private_wip" type="Sprite" parent="."]
-position = Vector2( 633.876, 983.224 )
-scale = Vector2( 0.643548, 0.644406 )
+[node name="Bounds" type="Node2D" parent="."]
+
+[node name="Wall_left" parent="Bounds" instance=ExtResource( 3 )]
+position = Vector2( -5000, 656.808 )
+scale = Vector2( 1, 3 )
+
+[node name="Wall_right" parent="Bounds" instance=ExtResource( 3 )]
+position = Vector2( 5000, 746.502 )
+scale = Vector2( 1, 3 )
+
+[node name="Floor" type="StaticBody2D" parent="Bounds"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Floor"]
+position = Vector2( 0, 1250 )
+scale = Vector2( 10, 1 )
+shape = SubResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Background_private_wip" type="Sprite" parent="Background"]
+position = Vector2( 0, 864.866 )
 z_index = -3
 texture = ExtResource( 5 )
+
+[node name="Flat_background_color" type="Sprite" parent="Background"]
+scale = Vector2( 3000, 1000 )
+z_index = -20
+texture = ExtResource( 7 )

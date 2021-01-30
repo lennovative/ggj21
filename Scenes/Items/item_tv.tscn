@@ -1,13 +1,52 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Graphics/items/item_tv.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/exit_light.png" type="Texture" id=2]
 
+[sub_resource type="GDScript" id=3]
+script/source = "extends Sprite
+
+
+func _ready():
+	$AnimationPlayer.play(\"idle\")
+	pass
+"
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Light2D:energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.9, 2, 3.3, 4.3, 5.2, 5.9, 6.7, 8.2, 9.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0, 0.61, 1.0, 0.41, 1.0, 1.49, 1.0, 0.41, 1.59 ]
+}
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends AnimationPlayer
+
+
+"
+
 [node name="item_tv" type="Sprite"]
 texture = ExtResource( 1 )
+script = SubResource( 3 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 1 )
+script = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="AnimationPlayer"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
-color = Color( 0.458824, 0.443137, 0.921569, 1 )
+color = Color( 0.173417, 0.52492, 0.784314, 1 )
+energy = 0.593078
 mode = 2

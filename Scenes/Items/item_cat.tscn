@@ -6,11 +6,11 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Sprite
 
-onready var audioPlayer =  get_node(\"Nyan\")
-onready var timer = get_node(\"Timer\")
+var audioPlayer =  get_child(0)
+var timer = get_child(1)
 
 func _on_AudioStreamPlayer2D_finished():
-	timer.set_wait_time(4.0)
+	timer.wait_time = rand_range(1, 10)
 	timer.start()
 
 func _on_Timer_timeout():
@@ -21,10 +21,11 @@ func _on_Timer_timeout():
 texture = ExtResource( 1 )
 script = SubResource( 1 )
 
-[node name="Nyan" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
+bus = "SFX"
 
 [node name="Timer" type="Timer" parent="."]
-[connection signal="finished" from="Nyan" to="." method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
