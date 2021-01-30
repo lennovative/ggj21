@@ -43,6 +43,7 @@ func _ready():
 	spawnItem("radio", Vector2(-2600, 500))
 	spawnItem("spring_shoes", Vector2(-1500, 1050))
 #	spawnItem("sword", Vector2(-, ))
+	spawnItem("walking_aid", Vector2(-200, 1100))
 
 	
 func _process(delta):
