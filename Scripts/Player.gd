@@ -31,7 +31,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("jump_button"):
 			vel.y -= jumpSpeed
 		if Input.is_action_pressed("down_button"):
-			self.position.y += 10
+			self.position.y += 5
 	vel.y += gravity * delta
 	vel = move_and_slide(vel, Vector2(0, -1))
 	

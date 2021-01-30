@@ -68,7 +68,7 @@ position = Vector2( 2100.75, 981.913 )
 [node name="ExitSign" parent="." instance=ExtResource( 4 )]
 position = Vector2( 618.597, 591.617 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="Ambient-light" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0, 0, 0, 1 )
 
