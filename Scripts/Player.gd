@@ -68,17 +68,20 @@ func item_loop():
 	#drop cat if yarn is reached
 	if current_item == "cat":
 		for range_item in items_in_range:
-			if range_item.name == "yarn":
+			if range_item.type == "yarn":
 				drop_item()
 
 
 func pickup_item():
+	#breakpoint
 	var item = items_in_range.pop_front()
-	current_item = item.name
+	current_item = item.type
 	item.queue_free()
 	item_effects()
+	print("picked item: " + current_item)
 
 func drop_item():
+	print("dropping item: " + current_item)
 	var spawn_item = item.instance()
 	spawn_item.init(current_item)
 	spawn_item.set_position(self.get_position())

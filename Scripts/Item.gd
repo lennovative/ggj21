@@ -1,16 +1,18 @@
 extends KinematicBody2D
 
 var vel = Vector2.ZERO
+var type
 
 func init(type: String):
-	self.name = type
+	self.type = type
 	var type_subnode = load("res://Scenes/Items/item_" + type + ".tscn").instance()
 	type_subnode.set_scale(Vector2(0.5, 0.5))
 	self.add_child(type_subnode)
-	self.set_collision_layer_bit(0, false);
-	self.set_collision_mask_bit(0, false);
-	self.set_collision_layer_bit(1, true);
-	self.set_collision_mask_bit(1, true);
+	
+	#self.set_collision_layer_bit(0, false);
+	#self.set_collision_mask_bit(0, false);
+	#self.set_collision_layer_bit(1, true);
+	#self.set_collision_mask_bit(1, true);
 
 
 func _on_PickupArea_body_entered(body):
