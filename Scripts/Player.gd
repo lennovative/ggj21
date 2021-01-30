@@ -115,6 +115,8 @@ func item_effects():
 				get_node("RadioCommPlayer").play()
 			"echolocator":
 				get_parent().start_echolocate()
+			"spring_shoes":
+				jumpSpeed = 1200
 	else:
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
