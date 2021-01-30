@@ -17,11 +17,7 @@ func spawnItem(type:String, position: Vector2):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-<<<<<<< Updated upstream
 	spawnItem("book_blue", Vector2(-1250, 1050))
-=======
-		spawnItem("book_blue", Vector2(-1250, 1050))
->>>>>>> Stashed changes
 	spawnItem("book_red", Vector2(1250, 1050))
 	spawnItem("book_green", Vector2(1500, 1050))
 	spawnItem("cat", Vector2(1775, 750))
