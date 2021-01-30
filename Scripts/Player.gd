@@ -49,6 +49,7 @@ func item_loop():
 		if current_item != null:
 			# TODO spawn correct item
 			var spawn_item = item.instance()
+			spawn_item.init(current_item)
 			spawn_item.set_position(self.get_position())
 			get_parent().add_child(spawn_item)
 			current_item = null
