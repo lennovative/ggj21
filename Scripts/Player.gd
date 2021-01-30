@@ -9,11 +9,12 @@ var gravity = 1200
 var walkspeed = 400
 var jumpSpeed = 600
 var acc = 1700
-
+var items_in_range = []
+var current_item = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	name = "player"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,3 +39,19 @@ func _physics_process(delta):
 	#rotate light
 	var mouse = get_global_mouse_position()
 	get_node("light_cone").look_at(mouse)
+	#item loop
+	collect_item()
+	
+
+func collect_item():
+	if not items_in_range.empty() and Input.is_action_pressed("collect"):
+		var item = items_in_range.pop_front()
+		current_item = item.name
+		item.queue_free()
+		print("item collected")
+
+func item_in_range(item):
+	items_in_range.append(item)
+
+func item_out_of_range(item):
+	items_in_range.erase(item)
