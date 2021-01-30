@@ -5,8 +5,10 @@
 
 [node name="ExitSign" type="Sprite"]
 scale = Vector2( 0.2, 0.2 )
+z_index = 1
 texture = ExtResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 color = Color( 0.407843, 0.894118, 0.105882, 1 )
