@@ -123,7 +123,7 @@ func item_effects():
 					walkspeed = 800
 					get_node("AnimationPlayer").set_speed_scale(2.0)
 				"glasses":
-					Globals.light_level = Color(0.2,0.2,0.2,1)
+					level.adjust_light(Color(0.2,0.2,0.2,1))
 				"vase": 
 					jumpSpeed = 0
 				"radio":
@@ -139,7 +139,7 @@ func item_effects():
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
 		drop_timer.stop()
-		Globals.light_level = Color.black
+		level.adjust_light(Color.black)
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
 		level.stop_echolocate()
