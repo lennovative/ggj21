@@ -11,6 +11,7 @@ var item = load("res://Scenes/Item.tscn")
 onready var drop_timer = get_node("drop_timer")
 var sprite_dir = "right"
 var stop = true
+onready var level = get_node("/root/Level")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -73,11 +74,11 @@ func item_loop():
 
 func update_inventory_sprite():
 	if current_item == null:
-		get_parent().get_node("Inventory").get_node("item_sprite").visible = false
+		level.get_node("Inventory").get_node("item_sprite").visible = false
 	else:
-		get_parent().get_node("Inventory").get_node("item_sprite").visible = true
+		level.get_node("Inventory").get_node("item_sprite").visible = true
 		var item_path = load("res://Assets/Graphics/items/item_" + current_item.type + ".png")
-		get_parent().get_node("Inventory").get_node("item_sprite").set_texture(item_path)
+		level.get_node("Inventory").get_node("item_sprite").set_texture(item_path)
 
 func pickup_item():
 	#breakpoint
@@ -114,7 +115,7 @@ func item_effects():
 			"radio":
 				get_node("RadioCommPlayer").play()
 			"echolocator":
-				get_parent().start_echolocate()
+				level.start_echolocate()
 			"spring_shoes":
 				jumpSpeed = 1200
 	else:
@@ -124,7 +125,7 @@ func item_effects():
 		Globals.light_level = Color.black
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
-		get_parent().stop_echolocate()
+		level.stop_echolocate()
 
 
 func item_in_range(item):
