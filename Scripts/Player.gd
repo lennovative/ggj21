@@ -11,6 +11,7 @@ var item = load("res://Scenes/Item.tscn")
 onready var drop_timer = get_node("drop_timer")
 var sprite_dir = "right"
 var stop = true
+onready var level = get_node("/root/Level")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -71,13 +72,24 @@ func item_loop():
 			if range_item.type == "yarn":
 				drop_item()
 
+func delete_children(node):
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free()
+
 func update_inventory_sprite():
+	var item_sprite = level.get_node("Inventory").get_node("item_sprite")
 	if current_item == null:
-		get_parent().get_node("Inventory").get_node("item_sprite").visible = false
+		delete_children(item_sprite)
 	else:
-		get_parent().get_node("Inventory").get_node("item_sprite").visible = true
-		var item_path = load("res://Assets/Graphics/items/item_" + current_item.type + ".png")
-		get_parent().get_node("Inventory").get_node("item_sprite").set_texture(item_path)
+		var item_scene = load("res://Scenes/Items/item_" + current_item.type + ".tscn").instance()
+		item_sprite.add_child(item_scene)
+		if current_item.type == "cat":
+			item_sprite.scale.x = 0.5
+			item_sprite.scale.y = 0.5
+		else:
+			item_sprite.scale.x = 1
+			item_sprite.scale.y = 1
 
 func pickup_item():
 	#breakpoint
@@ -92,7 +104,7 @@ func drop_item():
 	#print("dropping item: " + current_item)
 	#var spawn_item = item.instance()
 	#spawn_item.init(current_item)
-	current_item.set_position(self.get_position())
+	current_item.set_position(Vector2(self.get_position().x, self.get_position().y - 100))
 	get_parent().add_child(current_item)
 	current_item = null
 	update_inventory_sprite()
@@ -114,7 +126,7 @@ func item_effects():
 			"radio":
 				get_node("RadioCommPlayer").play()
 			"echolocator":
-				get_parent().start_echolocate()
+				level.start_echolocate()
 			"spring_shoes":
 				jumpSpeed = 1200
 	else:
@@ -124,7 +136,7 @@ func item_effects():
 		Globals.light_level = Color.black
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
-		get_parent().stop_echolocate()
+		level.stop_echolocate()
 
 
 func item_in_range(item):

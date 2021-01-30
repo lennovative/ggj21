@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Graphics/items/item_cat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sounds/cat1.wav" type="AudioStream" id=2]
@@ -15,10 +15,37 @@ func _on_AudioStreamPlayer2D_finished():
 
 func _on_Timer_timeout():
 	audioPlayer.play()
+
+func _ready():
+	$AnimationPlayer.play(\"catanimation\")
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	$AnimationPlayer.play(anim_name)
 "
 
+[sub_resource type="Animation" id=2]
+resource_name = "catanimation"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
 [node name="item_cat" type="Sprite"]
+position = Vector2( 7.03937, -11.8921 )
 texture = ExtResource( 1 )
+vframes = 2
+hframes = 7
+frame = 9
+region_rect = Rect2( -8.0383, -15.0273, 2221.07, 628.115 )
 script = SubResource( 1 )
 
 [node name="Nyan" type="AudioStreamPlayer2D" parent="."]
@@ -27,5 +54,10 @@ autoplay = true
 bus = "SFX"
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
+anims/catanimation = SubResource( 2 )
 [connection signal="finished" from="Nyan" to="." method="_on_AudioStreamPlayer2D_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
