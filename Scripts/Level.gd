@@ -22,6 +22,7 @@ func _ready():
 	spawnItem("coffee", Vector2(1050, 1050))
 	spawnItem("yarn", Vector2(300, 1100))
 	spawnItem("echolocator", Vector2(200, 1100))
+	spawnItem("spring_shoes", Vector2(0, 1100))
 
 	
 func _process(delta):
