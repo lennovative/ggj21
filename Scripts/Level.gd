@@ -2,6 +2,8 @@ extends Node2D
 
 const GRAVITY = 1200
 
+onready var ambient = get_node("CanvasModulate")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -25,4 +27,12 @@ func _ready():
 	spawnItem("coffee", Vector2(1050, 1050))
 
 
+	
+	var yarn_item = preload("res://Scenes/Item.tscn").instance()
+	yarn_item.init("yarn")
+	yarn_item.set_position(Vector2(300, 1100))
+	self.add_child(yarn_item)
+	
+func _process(delta):
+	ambient.set_color(Globals.light_level)
 
