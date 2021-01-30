@@ -57,13 +57,12 @@ func sprite_dir_loop():
 func light_loop():
 	var mouse = get_global_mouse_position()
 	get_node("light_cone").look_at(mouse)
-	#item loop
-	item_loop()
 
 func item_loop():
 	if Input.is_action_just_pressed("collect"):
+		print("e pressed")
 		if current_item != null:
-			drop_item()			
+			drop_item()
 		elif not items_in_range.empty():
 			pickup_item()
 
@@ -82,6 +81,7 @@ func drop_item():
 	get_parent().add_child(spawn_item)
 	current_item = null
 	item_effects()
+	print("item dropped")
 
 # sets the current item's effect:
 func item_effects():
