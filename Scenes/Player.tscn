@@ -4,11 +4,10 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Graphics/light_cone.png" type="Texture" id=3]
 
-
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 108.92, 287.716 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "idleleft"
 length = 0.3
 tracks/0/type = "value"
@@ -24,7 +23,7 @@ tracks/0/keys = {
 "values": [ 10 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "idleright"
 length = 0.3
 tracks/0/type = "value"
@@ -40,7 +39,7 @@ tracks/0/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "jumpleft"
 length = 0.3
 tracks/0/type = "value"
@@ -56,7 +55,7 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "jumpright"
 length = 0.3
 tracks/0/type = "value"
@@ -72,8 +71,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "walkleft"
+[sub_resource type="Animation" id=6]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -88,8 +86,7 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "walkright"
+[sub_resource type="Animation" id=7]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -121,7 +118,7 @@ region_rect = Rect2( 52.5382, -70.0261, 2927.97, 2497.59 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -14.8325, 4.89877 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="light_cone" type="Light2D" parent="."]
 position = Vector2( -1.92059, -6.08856 )
@@ -134,12 +131,12 @@ shadow_color = Color( 1, 1, 1, 0 )
 
 [node name="drop_timer" type="Timer" parent="."]
 one_shot = true
-[connection signal="timeout" from="drop_timer" to="." method="drop_item"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idleleft = SubResource( 5 )
-anims/idleright = SubResource( 6 )
-anims/jumpleft = SubResource( 7 )
-anims/jumpright = SubResource( 8 )
-anims/walkleft = SubResource( 3 )
-anims/walkright = SubResource( 4 )
+anims/idleleft = SubResource( 2 )
+anims/idleright = SubResource( 3 )
+anims/jumpleft = SubResource( 4 )
+anims/jumpright = SubResource( 5 )
+anims/walkleft = SubResource( 6 )
+anims/walkright = SubResource( 7 )
+[connection signal="timeout" from="drop_timer" to="." method="drop_item"]
