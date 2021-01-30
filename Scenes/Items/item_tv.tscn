@@ -48,5 +48,5 @@ script = SubResource( 2 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 color = Color( 0.173417, 0.52492, 0.784314, 1 )
-energy = 0.818267
+energy = 0.593078
 mode = 2
