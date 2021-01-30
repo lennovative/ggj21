@@ -135,7 +135,6 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 10
 texture = ExtResource( 11 )
 
-[node name="item_sprite" type="Sprite" parent="Inventory"]
+[node name="item_sprite" type="Node2D" parent="Inventory"]
 position = Vector2( 1175.47, 569.16 )
-scale = Vector2( 0.45, 0.45 )
 z_index = 9

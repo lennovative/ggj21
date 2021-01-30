@@ -71,13 +71,24 @@ func item_loop():
 			if range_item.type == "yarn":
 				drop_item()
 
+func delete_children(node):
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free()
+
 func update_inventory_sprite():
 	if current_item == null:
-		get_parent().get_node("Inventory").get_node("item_sprite").visible = false
+		delete_children(get_parent().get_node("Inventory").get_node("item_sprite"))
 	else:
-		get_parent().get_node("Inventory").get_node("item_sprite").visible = true
-		var item_path = load("res://Assets/Graphics/items/item_" + current_item + ".png")
-		get_parent().get_node("Inventory").get_node("item_sprite").set_texture(item_path)
+		var item_scene = load("res://Scenes/Items/item_" + current_item + ".tscn").instance()
+		var item_sprite = get_parent().get_node("Inventory").get_node("item_sprite")
+		item_sprite.add_child(item_scene)
+		if current_item == "cat":
+			item_sprite.scale.x = 0.5
+			item_sprite.scale.y = 0.5
+		else:
+			item_sprite.scale.x = 1
+			item_sprite.scale.y = 1
 
 func pickup_item():
 	#breakpoint
