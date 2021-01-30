@@ -25,3 +25,8 @@ func _on_PickupArea_body_exited(body):
 func _physics_process(delta):
 	vel.y += Globals.GRAVITY * delta
 	vel = move_and_slide(vel, Vector2(0, -1))
+	
+func echolocate():
+	get_node("Echolocate").play()
+	
+
