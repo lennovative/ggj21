@@ -129,6 +129,9 @@ func item_effects():
 				level.start_echolocate()
 			"spring_shoes":
 				jumpSpeed = 1200
+			"walking_aid":
+				walkspeed = 200
+				get_node("AnimationPlayer").set_speed_scale(0.5)
 	else:
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
