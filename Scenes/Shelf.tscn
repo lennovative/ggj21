@@ -6,6 +6,8 @@
 extents = Vector2( 10.3407, 0.343739 )
 
 [node name="Shelf" type="StaticBody2D"]
+z_index = -1
+collision_layer = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
