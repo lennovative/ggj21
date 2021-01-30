@@ -25,13 +25,9 @@ func _ready():
 	spawnItem("radio", Vector2(-2600, 500))
 	spawnItem("glasses", Vector2(-1300, 800))
 	spawnItem("coffee", Vector2(1050, 1050))
+	spawnItem("yarn", Vector2(300, 1100))
 
 
-	
-	var yarn_item = preload("res://Scenes/Item.tscn").instance()
-	yarn_item.init("yarn")
-	yarn_item.set_position(Vector2(300, 1100))
-	self.add_child(yarn_item)
 	
 func _process(delta):
 	ambient.set_color(Globals.light_level)
