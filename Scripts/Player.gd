@@ -105,6 +105,8 @@ func item_effects():
 				jumpSpeed = 0
 			"radio":
 				get_node("RadioCommPlayer").play()
+			"echolocator":
+				get_parent().start_echolocate()
 	else:
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
@@ -112,6 +114,7 @@ func item_effects():
 		Globals.light_level = Color.black
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
+		get_parent().stop_echolocate()
 
 
 func item_in_range(item):

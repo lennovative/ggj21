@@ -125,3 +125,6 @@ texture = ExtResource( 10 )
 scale = Vector2( 3000, 1000 )
 z_index = -20
 texture = ExtResource( 7 )
+
+[node name="Echolocate_timer" type="Timer" parent="."]
+[connection signal="timeout" from="Echolocate_timer" to="." method="start_echolocate"]
