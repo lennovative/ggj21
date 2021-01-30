@@ -21,5 +21,7 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource( 2 )
+
+[node name="Echolocate" type="AudioStreamPlayer2D" parent="."]
 [connection signal="body_entered" from="PickupArea" to="." method="_on_PickupArea_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="." method="_on_PickupArea_body_exited"]

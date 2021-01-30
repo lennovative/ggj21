@@ -1,15 +1,7 @@
 extends Node2D
 
-const GRAVITY = 1200
-
 onready var ambient = get_node("CanvasModulate")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-func get_gravity():
-	return 
 
 # Instances an item of given type and adds it to the scene at the given position (x, y)
 func spawnItem(type:String, position: Vector2):
