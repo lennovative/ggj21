@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Graphics/items/item_tv.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/exit_light.png" type="Texture" id=2]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Sprite
 
 
@@ -12,8 +12,7 @@ func _ready():
 	pass
 "
 
-[sub_resource type="Animation" id=1]
-resource_name = "idle"
+[sub_resource type="Animation" id=2]
 length = 10.0
 loop = true
 tracks/0/type = "value"
@@ -29,24 +28,25 @@ tracks/0/keys = {
 "values": [ 1.0, 1.0, 0.61, 1.0, 0.41, 1.0, 1.49, 1.0, 0.41, 1.59 ]
 }
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 script/source = "extends AnimationPlayer
 
 
 "
 
 [node name="item_tv" type="Sprite"]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/idle = SubResource( 1 )
-script = SubResource( 2 )
+anims/idle = SubResource( 2 )
+script = SubResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="AnimationPlayer"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 color = Color( 0.173417, 0.52492, 0.784314, 1 )
-energy = 0.593078
+energy = 1.10856
 mode = 2
