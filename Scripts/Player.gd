@@ -104,7 +104,7 @@ func drop_item():
 	#print("dropping item: " + current_item)
 	#var spawn_item = item.instance()
 	#spawn_item.init(current_item)
-	current_item.set_position(self.get_position())
+	current_item.set_position(Vector2(self.get_position().x, self.get_position().y - 100))
 	get_parent().add_child(current_item)
 	current_item = null
 	update_inventory_sprite()
