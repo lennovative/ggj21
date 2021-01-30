@@ -21,7 +21,8 @@ func _ready():
 	objective = spawnItem("glasses", Vector2(-1300, 800))
 	spawnItem("coffee", Vector2(1050, 1050))
 	spawnItem("yarn", Vector2(300, 1100))
-	spawnItem("echolocator", Vector2(200, 1100))
+	spawnItem("echolocator", Vector2(-4900, 1050))
+	spawnItem("tv", Vector2(3750, 1050))
 
 	
 func _process(delta):
