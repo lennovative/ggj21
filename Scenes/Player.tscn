@@ -28,9 +28,8 @@ current = true
 shape = SubResource( 2 )
 
 [node name="light_cone" type="Light2D" parent="."]
-position = Vector2( 0.749207, -0.749161 )
 texture = ExtResource( 3 )
-offset = Vector2( 10, 270 )
+offset = Vector2( 270, -10 )
 color = Color( 1, 1, 1, 0.317647 )
 range_height = 136.5
 shadow_enabled = true
