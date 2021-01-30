@@ -54,5 +54,7 @@ position = Vector2( 0.749207, -0.749161 )
 texture = ExtResource( 3 )
 offset = Vector2( 10, 270 )
 color = Color( 1, 1, 1, 0.317647 )
+range_height = 136.5
 shadow_enabled = true
+shadow_color = Color( 1, 1, 1, 0 )
 script = SubResource( 3 )
