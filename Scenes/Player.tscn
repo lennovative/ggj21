@@ -4,8 +4,6 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Graphics/light_cone.png" type="Texture" id=3]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28.5, 29.0236 )
 
@@ -37,3 +35,7 @@ color = Color( 1, 1, 1, 0.317647 )
 range_height = 136.5
 shadow_enabled = true
 shadow_color = Color( 1, 1, 1, 0 )
+
+[node name="drop_timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="drop_timer" to="." method="drop_item"]

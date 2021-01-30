@@ -18,17 +18,27 @@ position = Vector2( 723.809, 1131 )
 
 [node name="Plattform" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1937.65, 1134.04 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1231.76, 1165.71 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1472.13, 1194.15 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1237.68, 1010.91 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 2496.43, 1257.43 )
@@ -37,35 +47,55 @@ shape = SubResource( 1 )
 
 [node name="Plattform5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1672.99, 1191.71 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1677.85, 1034.65 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 947.995, 1207.02 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1938.88, 988.915 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform9" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1682.83, 874.618 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform10" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1939.44, 841.542 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Plattform11" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1943.95, 685.004 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 23.3807, 656.808 )
 scale = Vector2( 1, 3 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 5068.33, 746.502 )
 scale = Vector2( 1, 3 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2100.75, 981.913 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="ExitSign" parent="." instance=ExtResource( 4 )]
 position = Vector2( 610.884, 670.902 )
@@ -76,7 +106,7 @@ visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background_private_wip" type="Sprite" parent="."]
-position = Vector2( 634.999, 983.224 )
+position = Vector2( 633.876, 983.224 )
 scale = Vector2( 0.643548, 0.644406 )
 z_index = -3
 texture = ExtResource( 5 )
