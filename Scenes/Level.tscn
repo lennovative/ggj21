@@ -130,15 +130,17 @@ z_index = -20
 texture = ExtResource( 7 )
 
 [node name="Inventory" type="CanvasLayer" parent="."]
+scale = Vector2( 0.75, 0.75 )
+transform = Transform2D( 0.75, 0, 0, 0.75, 0, 0 )
 
 [node name="inventory_background" type="Sprite" parent="Inventory"]
-position = Vector2( 1175.02, 571.195 )
+position = Vector2( 100, 100 )
 scale = Vector2( 0.6, 0.6 )
 z_index = 10
 texture = ExtResource( 11 )
 
 [node name="item_sprite" type="Node2D" parent="Inventory"]
-position = Vector2( 1175.47, 569.16 )
+position = Vector2( 100, 100 )
 z_index = 9
 
 [node name="Echolocate_timer" type="Timer" parent="."]
