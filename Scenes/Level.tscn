@@ -89,6 +89,7 @@ z_index = -1
 position = Vector2( -2383.15, 1218.13 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Bounds" type="Node2D" parent="."]
