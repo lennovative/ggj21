@@ -11,6 +11,7 @@ var jumpSpeed = 600
 var acc = 1700
 var items_in_range = []
 var current_item = null
+var item = load("res://Scenes/Item.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,15 +41,24 @@ func _physics_process(delta):
 	var mouse = get_global_mouse_position()
 	get_node("light_cone").look_at(mouse)
 	#item loop
-	collect_item()
+	item_loop()
 	
 
-func collect_item():
-	if not items_in_range.empty() and Input.is_action_pressed("collect"):
-		var item = items_in_range.pop_front()
-		current_item = item.name
-		item.queue_free()
-		print("item collected")
+func item_loop():
+	if Input.is_action_just_pressed("collect"):
+		if current_item != null:
+			# TODO spawn correct item
+			var spawn_item = item.instance()
+			spawn_item.set_position(self.get_position())
+			get_parent().add_child(spawn_item)
+			current_item = null
+		elif not items_in_range.empty():
+			var item = items_in_range.pop_front()
+			current_item = item.name
+			item.queue_free()
+			print("item collected")
+			
+			
 
 func item_in_range(item):
 	items_in_range.append(item)

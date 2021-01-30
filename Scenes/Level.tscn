@@ -70,8 +70,7 @@ position = Vector2( 2100.75, 981.913 )
 position = Vector2( 610.884, 670.902 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
+[node name="Ambien-light" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background_private_wip" type="Sprite" parent="."]
