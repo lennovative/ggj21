@@ -67,10 +67,10 @@ scale = Vector2( 1, 3 )
 position = Vector2( 2100.75, 981.913 )
 
 [node name="ExitSign" parent="." instance=ExtResource( 4 )]
-position = Vector2( 618.597, 591.617 )
+position = Vector2( 610.884, 670.902 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="Ambient-light" type="CanvasModulate" parent="."]
-visible = false
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background_private_wip" type="Sprite" parent="."]

@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Assets/Graphics/exit_light.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Graphics/exit_sign.png" type="Texture" id=2]
 
-[node name="ExitSign" type="Sprite"]
+[node name="ExitSign" type="Light2D"]
 scale = Vector2( 0.2, 0.2 )
 z_index = 1
-texture = ExtResource( 2 )
-
-[node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
-color = Color( 0.407843, 0.894118, 0.105882, 1 )
+color = Color( 0.231373, 0.780392, 0.117647, 1 )
