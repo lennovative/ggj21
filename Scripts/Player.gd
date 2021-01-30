@@ -37,5 +37,4 @@ func _physics_process(delta):
 	
 	#rotate light
 	var mouse = get_global_mouse_position()
-	var angle = self.get_angle_to(mouse) - PI / 2
-	get_node("light_cone").set_rotation(angle)
+	get_node("light_cone").look_at(mouse)
