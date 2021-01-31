@@ -60,8 +60,8 @@ func _ready():
 	spawnItem("walking_aid", Vector2(-200, 1100))
 
 	
-func _process(delta):
-	ambient.set_color(Globals.light_level)
+func adjust_light(light_level: Color):
+	ambient.set_color(light_level)
 
 func start_echolocate():
 	objective.echolocate()
