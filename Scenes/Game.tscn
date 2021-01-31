@@ -24,6 +24,7 @@ script = ExtResource( 1 )
 script = SubResource( 1 )
 
 [node name="inventory_background" type="Sprite" parent="Inventory"]
+visible = false
 scale = Vector2( 0.6, 0.6 )
 z_index = 10
 texture = ExtResource( 2 )
