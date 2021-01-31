@@ -20,7 +20,7 @@ shape = SubResource( 1 )
 [node name="Label" type="Label" parent="."]
 margin_right = 208.0
 margin_bottom = 192.0
-text = "press f"
+text = "press f to deliver"
 align = 1
 valign = 1
 uppercase = true
