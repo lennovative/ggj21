@@ -6,16 +6,23 @@ var Level = preload("res://Scenes/Level.tscn").instance()
 var Office = preload("res://Scenes/Office.tscn").instance()
 var first_scene = true
 var current_item = null
-var target_name1 = null
-var target_name2 = null
-var target_name3 = null
+var targets = [null, null, null]
 var delivered = [false, false, false]
-const item_names = ["mug", "ball_basket", "ball_volley", "ball_white", "ball_wilson", "book_blue", "book_green", "book_red", "book_stack", "bowl", "candle_new", "candle_old", "cat_still", "chest", "coffee", "creeper_plush", "doll", "echolocator", "flour", "glasses", "ice_cube", "magazine", "magnet", "mtg_cards", "phiranja_flower", "picture", "plant", "radio", "spring_shoes", "sword", "tape", "tea_cup", "triforce", "tv", "twig", "vase_blue", "vase_green", "vase_red", "walking_aid", "wrench", "yarn"]
+const item_names = ["cat", "ball_basket", "ball_volley", "ball_white", "ball_wilson", "book_blue", "book_green", "book_red", "book_stack", "bowl", "candle_new", "candle_old", "chest", "creeper_plush", "doll", "flour", "glasses", "ice_cubes", "magazine", "magnet", "mtg_cards", "phiranja_flower", "picture", "plant", "radio", "sword", "tape", "tea_cup", "triforce", "tv", "twig", "vase_blue", "vase_green", "vase_red", "walking_aid", "wrench", "yarn"]
+const ITEM_CLASS = preload("res://Scenes/Item.tscn")
+var items = []
+var found_items = []
 
 func _ready():
-	target_name1 = "cat_still"
-	target_name2 = get_random_item([target_name1])
-	target_name3 = get_random_item([target_name1, target_name2])
+	for item_name in item_names:
+		var new_item = ITEM_CLASS.instance()
+		new_item.init(item_name)
+		items.append(new_item)
+	targets[0] = items[0]
+	targets[1] = get_random_item(targets)
+	targets[2] = get_random_item(targets)
+	Level.items = items
+	Level.objective = targets[0]
 	load_office()
 	randomize()
 
@@ -41,19 +48,14 @@ func switch_scene():
 
 func item_deliver():
 	if current_item != null:
-		print("deliver")
-		var name = current_item.type if current_item.type != "cat" else "cat_still"
-		match name:
-			target_name1:
-				delivered[0] = true
-				$Office.get_node("WantedBoard").get_node("done1").visible = true
-			target_name2:
-				delivered[1] = true
-				$Office.get_node("WantedBoard").get_node("done2").visible = true
-			target_name3:
-				delivered[2] = true
-				$Office.get_node("WantedBoard").get_node("done3").visible = true
-		current_item = null
+		print("deliver" + current_item.name + " expecting: " + targets[0].name + " or " + targets[1].name + " or " + targets[2].name)
+		for i in range(3):
+			if current_item == targets[i]:
+				delivered[i] = true
+				$Office.get_node("WantedBoard").get_node("done" + String(i+1)).visible = true
+				current_item = null
+			if delivered[i] and targets[i] == Level.objective and not i == 2:
+				Level.objective = targets[i+1]
 		delete_children($Inventory.get_node("item_sprite"))
 		win()
 
@@ -68,24 +70,27 @@ func win():
 	# TODO
 
 func set_sprites():
-	$Office.get_node("WantedBoard").get_node("target_item1").set_texture(load("res://Assets/Graphics/items/item_" + target_name1 + ".png"))
-	$Office.get_node("WantedBoard").get_node("target_item2").set_texture(load("res://Assets/Graphics/items/item_" + target_name2 + ".png"))
-	$Office.get_node("WantedBoard").get_node("target_item3").set_texture(load("res://Assets/Graphics/items/item_" + target_name3 + ".png"))
+	$Office.get_node("WantedBoard").get_node("target_item1").set_texture(load("res://Assets/Graphics/items/item_" + targets[0].type + ".png"))
+	$Office.get_node("WantedBoard").get_node("target_item2").set_texture(load("res://Assets/Graphics/items/item_" + targets[1].type + ".png"))
+	$Office.get_node("WantedBoard").get_node("target_item3").set_texture(load("res://Assets/Graphics/items/item_" + targets[2].type + ".png"))
 
 
 func get_new_targets():
 	$Office.get_node("WantedBoard").get_node("done1").visible = false
 	$Office.get_node("WantedBoard").get_node("done2").visible = false
 	$Office.get_node("WantedBoard").get_node("done3").visible = false
-	target_name1 = get_random_item([])
-	target_name2 = get_random_item([target_name1])
-	target_name3 = get_random_item([target_name1, target_name2])
+	targets[0] = get_random_item(found_items)
+	targets[1] = get_random_item(found_items + targets)
+	targets[2] = get_random_item(found_items + targets)
+	Level.objective = targets[0]
+	for i in range (3):
+		delivered[i] = false
 	set_sprites()
 
 func get_random_item(exceptions):
-	var item_id = int(rand_range(0, item_names.size() - 1))
-	var item = item_names[item_id]
+	var item_id = randi() % items.size()
+	var item = items[item_id]
 	while exceptions.count(item) > 0:
-		item_id = int(rand_range(0, item_names.size() - 1))
-		item = item_names[item_id]
+		item_id = randi() % items.size()
+		item = items[item_id]
 	return item
