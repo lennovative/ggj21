@@ -1,0 +1,20 @@
+# GlobalGameJam 2021
+
+![GGJ 2021 Logo](https://s3-us-west-1.amazonaws.com/ggj/site/site-images/GGJ00_Logo_Light.svg "GGJ 2021 Logo")
+
+
+
+## Controls
+| Key | Action              |
+|-----|---------------------|
+|<kbd>←</kbd> <kbd>→ </kbd> | Move |
+|<kbd>Space</kbd> | Jump |
+| <kbd>E</kbd> | Pick up / drop item |
+| <kbd>↵ </kbd> | Change stage |
+
+## Contributers
+* Camaika
+* Felan7
+* lennovative
+* Paango
+* Sushman
