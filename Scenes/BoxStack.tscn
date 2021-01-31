@@ -1,49 +1,66 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Items/Plattform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/wooden_box_visual.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 117.129, 244.767 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 75.6566, 1.21915 )
+
 [node name="BoxStack" type="Node2D"]
 
 [node name="Boxes" type="Node2D" parent="."]
+position = Vector2( -66.4681, 46.6691 )
 
-[node name="WoodenBox" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( -42.8249, 35.1815 )
+[node name="wooden_box_visual_fb" parent="Boxes" instance=ExtResource( 2 )]
+modulate = Color( 0.380392, 0.321569, 0.109804, 1 )
+position = Vector2( 3.79211, -2.27661 )
 z_index = 1
 
-[node name="WoodenBox2" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( -44.3464, -108.932 )
+[node name="wooden_box_visual_fm" parent="Boxes" instance=ExtResource( 2 )]
+position = Vector2( 6.07925, -153.507 )
 z_index = 1
 
-[node name="WoodenBox3" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( -47.3352, -250.49 )
+[node name="wooden_box_visual_ft" parent="Boxes" instance=ExtResource( 2 )]
+modulate = Color( 0.486275, 0.407843, 0.117647, 1 )
+position = Vector2( 8.009, -301.674 )
 z_index = 1
 
-[node name="WoodenBox7" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 66.1884, -60.8398 )
-z_index = -1
+[node name="wooden_box_visual_mb" parent="Boxes" instance=ExtResource( 2 )]
+position = Vector2( 61.4026, -49.3891 )
 
-[node name="WoodenBox8" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 62.7641, -209.732 )
-z_index = -1
+[node name="wooden_box_visual_mm" parent="Boxes" instance=ExtResource( 2 )]
+position = Vector2( 68.4169, -194.072 )
 
-[node name="WoodenBox9" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 56.0368, -352.684 )
-z_index = -1
+[node name="wooden_box_visual_mt" parent="Boxes" instance=ExtResource( 2 )]
+position = Vector2( 62.7601, -346.807 )
 
-[node name="WoodenBox4" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 7.40732, -7.98412 )
+[node name="wooden_box_visual_bb" parent="Boxes" instance=ExtResource( 2 )]
+modulate = Color( 0.447059, 0.372549, 0.0941176, 1 )
+position = Vector2( 121.47, -102.783 )
+z_index = -2
 
-[node name="WoodenBox5" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 9.22903, -157.218 )
+[node name="wooden_box_visual_bm" parent="Boxes" instance=ExtResource( 2 )]
+position = Vector2( 114.025, -243.584 )
+z_index = -2
 
-[node name="WoodenBox6" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 8.32932, -305.169 )
+[node name="wooden_box_visual_bt" parent="Boxes" instance=ExtResource( 2 )]
+modulate = Color( 0.443137, 0.376471, 0.129412, 1 )
+position = Vector2( 114.245, -392.508 )
+z_index = -2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 27.546, -107.006 )
 shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -2.63954, -373.511 )
+shape = SubResource( 2 )
+one_way_collision = true
