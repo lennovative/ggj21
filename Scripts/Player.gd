@@ -104,7 +104,7 @@ func pickup_item():
 	get_parent().remove_child(item)
 	update_inventory_sprite()
 	item_effects()
-	#print("picked item: " + current_item)
+	#print("picked item: " + game.current_item.type)
 
 func drop_item():
 	#print("dropping item: " + current_item)
@@ -143,6 +143,8 @@ func item_effects():
 					get_node("AnimationPlayer").set_speed_scale(0.5)
 				"ice_cubes":
 					acc = 300
+				"doll":
+					start_creepy_noises()
 	else:
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
@@ -152,7 +154,22 @@ func item_effects():
 		get_node("RadioCommPlayer").stop()
 		level.stop_echolocate()
 		acc = 1700
+		stop_creepy_noises()
 
+func start_creepy_noises():
+	$noise_timer.start(rand_range(5,10))
+
+func play_creepy_noise():
+	
+	var noises = $CreepyNoises.get_children()
+	$CreepyNoises.set_position(Vector2(rand_range(-5000,5000), 0))
+	var rand = randi() % noises.size()
+	print("playing noise " + String(rand) + " Dist: " + String(Vector2.ZERO.distance_to($CreepyNoises.get_position())))
+	noises[rand].play()
+	$noise_timer.start(rand_range(5,10))
+	
+func stop_creepy_noises():
+	$noise_timer.stop()
 
 func item_in_range(item):
 	items_in_range.append(item)
