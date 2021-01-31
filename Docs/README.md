@@ -10,7 +10,8 @@
 |<kbd>←</kbd> <kbd>→ </kbd> | Move |
 |<kbd>Space</kbd> | Jump |
 | <kbd>E</kbd> | Pick up / drop item |
-| <kbd>↵ </kbd> | Change stage |
+| <kbd>Q </kbd> | Change stage |
+| <kbd>Mouse </kbd> | Move flashlight |
 
 ## Contributers
 * Camaika
