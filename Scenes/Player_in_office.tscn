@@ -19,7 +19,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 15 ]
+"values": [ 18 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 8 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -76,9 +76,9 @@ script = ExtResource( 2 )
 [node name="Player" type="Sprite" parent="."]
 position = Vector2( -21.3816, 3.5636 )
 texture = ExtResource( 1 )
-vframes = 5
+vframes = 4
 hframes = 5
-frame = 11
+frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -5, 11 )
