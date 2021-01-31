@@ -68,10 +68,10 @@ margin_bottom = 400.0
 
 [node name="Deliver" parent="TextBox" instance=ExtResource( 10 )]
 visible = false
-margin_left = 560.0
-margin_top = 184.0
-margin_right = 560.0
-margin_bottom = 184.0
+margin_left = 566.0
+margin_top = 180.0
+margin_right = 566.0
+margin_bottom = 180.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960, 540 )
@@ -79,7 +79,6 @@ current = true
 script = SubResource( 2 )
 
 [node name="Grandma" parent="." instance=ExtResource( 7 )]
-visible = false
 position = Vector2( 168, 616 )
 z_index = 4
 

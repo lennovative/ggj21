@@ -49,15 +49,27 @@ func switch_scene():
 func item_deliver():
 	if current_item != null:
 		print("deliver" + current_item.name + " expecting: " + targets[0].name + " or " + targets[1].name + " or " + targets[2].name)
+		var correct_item = false
 		for i in range(3):
 			if current_item == targets[i]:
 				delivered[i] = true
 				$Office.get_node("WantedBoard").get_node("done" + String(i+1)).visible = true
 				current_item = null
+				correct_item = true
 			if delivered[i] and targets[i] == Level.objective and not i == 2:
 				Level.objective = targets[i+1]
+		show_message("nice" if correct_item else "wrong")
 		delete_children($Inventory.get_node("item_sprite"))
 		win()
+	else:
+		show_message("no_item")
+
+func show_message(type):
+	$Office.get_node("Grandma").speak(type)
+
+func remove_current_item():
+	current_item = null
+	delete_children($Inventory.get_node("item_sprite"))
 
 func delete_children(node):
 	for n in node.get_children():
