@@ -60,7 +60,8 @@ func item_deliver():
 			if delivered[i] and targets[i] == Level.objective and not i == 2:
 				Level.objective = targets[i+1]
 		show_message("nice" if correct_item else "wrong")
-		delete_children($Inventory.get_node("item_sprite"))
+		if correct_item:
+			delete_children($Inventory.get_node("item_sprite"))
 		win()
 	else:
 		show_message("no_item")
