@@ -67,6 +67,7 @@ margin_right = 768.0
 margin_bottom = 400.0
 
 [node name="Deliver" parent="TextBox" instance=ExtResource( 10 )]
+visible = false
 margin_left = 560.0
 margin_top = 184.0
 margin_right = 560.0
@@ -107,7 +108,7 @@ visible = false
 modulate = Color( 0.121569, 0.682353, 0.0588235, 1 )
 use_parent_material = true
 position = Vector2( 120, 72 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 9 )
 
@@ -116,7 +117,7 @@ visible = false
 modulate = Color( 0.121569, 0.682353, 0.0588235, 1 )
 use_parent_material = true
 position = Vector2( -76, -64 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 9 )
 
@@ -126,6 +127,6 @@ modulate = Color( 0.121569, 0.682353, 0.0588235, 1 )
 use_parent_material = true
 position = Vector2( -104, 80 )
 rotation = 0.659734
-scale = Vector2( 0.36, 0.36 )
+scale = Vector2( 0.6, 0.6 )
 z_index = 1
 texture = ExtResource( 9 )

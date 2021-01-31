@@ -34,6 +34,7 @@ func _physics_process(delta):
 	vel = move_and_slide(vel, Vector2(0, -1))
 	get_parent().get_node("Camera2D").update_camera(self.position.x)
 	enter_loop()
+	deliver_loop()
 	exit_loop()
 
 func enter_loop():
