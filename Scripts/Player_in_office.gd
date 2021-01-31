@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var vel = Vector2()
 var gravity = Globals.GRAVITY
-var walkspeed = 400
+var walkspeed = 430
 var acc = 1700
 var sprite_dir = "left"
 var can_enter = false

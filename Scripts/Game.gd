@@ -2,31 +2,28 @@ extends Node2D
 
 enum Scene {LEVEL, OFFICE}
 var current_scene = Scene.OFFICE
-var Level = preload("res://Scenes/Level.tscn")
-var Office = preload("res://Scenes/Office.tscn")
+var Level = preload("res://Scenes/Level.tscn").instance()
+var Office = preload("res://Scenes/Office.tscn").instance()
 var first_scene = true
+var current_item = null
 
 func _ready():
 	load_office()
 
 func load_office():
 	current_scene = Scene.OFFICE
-	add_child(Office.instance())
+	add_child(Office)
 
 func load_level():
 	current_scene = Scene.LEVEL
-	add_child(Level.instance())
-
-func clear():
-	first_scene = false
-	for n in self.get_children():
-		self.remove_child(n)
-		n.queue_free()
+	add_child(Level)
 
 func switch_scene():
-	clear()
+	first_scene = false
 	match current_scene:
 		Scene.OFFICE:
+			self.remove_child(Office)
 			load_level()
 		Scene.LEVEL:
+			self.remove_child(Level)
 			load_office()

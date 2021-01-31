@@ -6,12 +6,12 @@ var walkspeed = 400
 var jumpSpeed = 800
 var acc = 1700
 var items_in_range = []
-var current_item = null
 var item = load("res://Scenes/Item.tscn")
 var can_enter = false
 onready var drop_timer = get_node("drop_timer")
 var sprite_dir = "right"
 onready var level = get_node("/root/Game/Level")
+onready var game = get_node("/root/Game")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -66,13 +66,13 @@ func enter_loop():
 
 func item_loop():
 	if Input.is_action_just_pressed("collect"):
-		if current_item != null:
+		if game.current_item != null:
 			drop_item()
 		elif not items_in_range.empty():
 			pickup_item()
 			
 	#drop cat if yarn is reached
-	if current_item != null && current_item.type == "cat":
+	if game.current_item != null && game.current_item.type == "cat":
 		for range_item in items_in_range:
 			if range_item.type == "yarn":
 				drop_item()
@@ -83,13 +83,13 @@ func delete_children(node):
 		n.queue_free()
 
 func update_inventory_sprite():
-	var item_sprite = level.get_node("Inventory").get_node("item_sprite")
-	if current_item == null:
+	var item_sprite = game.get_node("Inventory").get_node("item_sprite")
+	if game.current_item == null:
 		delete_children(item_sprite)
 	else:
-		var item_scene = load("res://Scenes/Items/item_" + current_item.type + ".tscn").instance()
+		var item_scene = load("res://Scenes/Items/item_" + game.current_item.type + ".tscn").instance()
 		item_sprite.add_child(item_scene)
-		if current_item.type == "cat":
+		if game.current_item.type == "cat":
 			item_sprite.scale.x = 0.5
 			item_sprite.scale.y = 0.5
 		else:
@@ -99,7 +99,7 @@ func update_inventory_sprite():
 func pickup_item():
 	#breakpoint
 	var item = items_in_range.pop_front()
-	current_item = item
+	game.current_item = item
 	get_parent().remove_child(item)
 	update_inventory_sprite()
 	item_effects()
@@ -109,19 +109,19 @@ func drop_item():
 	#print("dropping item: " + current_item)
 	#var spawn_item = item.instance()
 	#spawn_item.init(current_item)
-	current_item.set_position(Vector2(self.get_position().x, self.get_position().y - 100))
-	get_parent().add_child(current_item)
-	current_item = null
+	game.current_item.set_position(Vector2(self.get_position().x, self.get_position().y - 100))
+	get_parent().add_child(game.current_item)
+	game.current_item = null
 	update_inventory_sprite()
 	item_effects()
 
 # sets the current item's effect:
 func item_effects():
-	if current_item != null:
-		if current_item.type.begins_with("vase"):
+	if game.current_item != null:
+		if game.current_item.type.begins_with("vase"):
 			jumpSpeed = 0
 		else:
-			match current_item.type:
+			match game.current_item.type:
 				"cat":
 					drop_timer.start(rand_range(5.0, 10.0))
 				"coffee":

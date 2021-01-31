@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Items/Plattform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -10,8 +10,6 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/BoxStack.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Graphics/Background_locker_room.jpg" type="Texture" id=10]
-[ext_resource path="res://Assets/Graphics/inventory_background.png" type="Texture" id=11]
-[ext_resource path="res://Scripts/Inventory.gd" type="Script" id=12]
 [ext_resource path="res://Assets/Graphics/bg_bridge.jpg" type="Texture" id=13]
 [ext_resource path="res://Assets/Graphics/bg_up1.jpg" type="Texture" id=14]
 [ext_resource path="res://Assets/Graphics/bg_shelves.jpg" type="Texture" id=15]
@@ -175,30 +173,16 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Inventory" type="CanvasLayer" parent="."]
-script = ExtResource( 12 )
-
-[node name="inventory_background" type="Sprite" parent="Inventory"]
-position = Vector2( 100, 100 )
-scale = Vector2( 0.6, 0.6 )
-z_index = 10
-texture = ExtResource( 11 )
-
-[node name="item_sprite" type="Node2D" parent="Inventory"]
-position = Vector2( 100, 100 )
-z_index = 9
-
 [node name="Echolocate_timer" type="Timer" parent="."]
 
 [node name="TextBox" type="Node2D" parent="."]
 position = Vector2( 300, 895 )
-scale = Vector2( 0.6, 0.6 )
 z_index = -1
 
 [node name="Text" parent="TextBox" instance=ExtResource( 17 )]
 visible = false
-margin_left = -724.94
-margin_top = -37.8827
-margin_right = -724.94
-margin_bottom = -37.8827
+margin_left = -498.203
+margin_top = -81.6587
+margin_right = -498.203
+margin_bottom = -81.6587
 [connection signal="timeout" from="Echolocate_timer" to="." method="start_echolocate"]
