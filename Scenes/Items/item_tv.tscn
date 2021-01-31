@@ -50,5 +50,5 @@ scale = Vector2( 0.845137, 0.653733 )
 z_index = 1
 texture = ExtResource( 2 )
 color = Color( 0.173417, 0.52492, 0.784314, 1 )
-energy = 1.02875
+energy = 1.10856
 mode = 2
