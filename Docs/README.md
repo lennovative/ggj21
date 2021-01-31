@@ -10,7 +10,7 @@
 |<kbd>←</kbd> <kbd>→ </kbd> | Move |
 |<kbd>Space</kbd> | Jump |
 | <kbd>E</kbd> | Pick up / drop item |
-| <kbd>Q </kbd> | Change stage |
+| <kbd>Q </kbd> | Enter door |
 | <kbd>Mouse </kbd> | Move flashlight |
 
 ## Contributers
