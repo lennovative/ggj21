@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Graphics/grandma.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/Fondamento_Regular.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/Grandma.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Graphics/flat_grey_4px.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "speak"
@@ -40,16 +41,16 @@ position = Vector2( 7.13525, 14.2705 )
 shape = SubResource( 2 )
 
 [node name="Speak" type="Node2D" parent="."]
-scale = Vector2( -1, 1 )
+visible = false
+scale = Vector2( -0.5, 0.5 )
 z_index = 1000
 z_as_relative = false
 
 [node name="Label" type="Label" parent="Speak"]
-visible = false
-margin_left = 136.343
-margin_top = -67.3726
-margin_right = 421.343
-margin_bottom = 188.627
+margin_left = 289.0
+margin_top = -93.0
+margin_right = 788.0
+margin_bottom = 395.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "default"
@@ -58,6 +59,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="flat_grey_4px" type="Sprite" parent="Speak"]
+modulate = Color( 0, 0, 0, 0.403922 )
+position = Vector2( 540.99, 867.935 )
+scale = Vector2( 135.654, 488.04 )
+z_index = -2
+texture = ExtResource( 4 )
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 12.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

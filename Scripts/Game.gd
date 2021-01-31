@@ -40,6 +40,7 @@ func switch_scene():
 		first_scene = false
 	match current_scene:
 		Scene.OFFICE:
+			Office.get_node("Grandma").hide_text()
 			self.remove_child(Office)
 			load_level()
 		Scene.LEVEL:
