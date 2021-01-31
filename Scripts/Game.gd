@@ -40,22 +40,37 @@ func switch_scene():
 			load_office()
 
 func item_deliver():
-	if current_item != null:
+	var have_item = current_item != null
+	if have_item:
 		print("deliver")
 		var name = current_item.type if current_item.type != "cat" else "cat_still"
-		match name:
-			target_name1:
-				delivered[0] = true
-				$Office.get_node("WantedBoard").get_node("done1").visible = true
-			target_name2:
-				delivered[1] = true
-				$Office.get_node("WantedBoard").get_node("done2").visible = true
-			target_name3:
-				delivered[2] = true
-				$Office.get_node("WantedBoard").get_node("done3").visible = true
-		current_item = null
-		delete_children($Inventory.get_node("item_sprite"))
+		if name == target_name1:
+			delivered[0] = true
+			$Office.get_node("WantedBoard").get_node("done1").visible = true
+			remove_current_item()
+			show_message("nice")
+		elif name == target_name2:
+			delivered[1] = true
+			$Office.get_node("WantedBoard").get_node("done2").visible = true
+			remove_current_item()
+			show_message("nice")
+		elif name == target_name3:
+			delivered[2] = true
+			$Office.get_node("WantedBoard").get_node("done3").visible = true
+			remove_current_item()
+			show_message("nice")
+		else:
+			show_message("wrong")
 		win()
+	else:
+		show_message("no_item")
+
+func show_message(type):
+	$Office.get_node("Grandma").speak(type)
+
+func remove_current_item():
+	current_item = null
+	delete_children($Inventory.get_node("item_sprite"))
 
 func delete_children(node):
 	for n in node.get_children():
