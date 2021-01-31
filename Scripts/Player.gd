@@ -180,5 +180,6 @@ func item_out_of_range(item):
 
 
 func _on_drop_timer_timeout():
-	if game.current_item.type == "cat":
-		drop_item()
+	if game.current_item != null:
+		if game.current_item.type == "cat":
+			drop_item()
