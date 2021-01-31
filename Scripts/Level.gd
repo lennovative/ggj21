@@ -5,12 +5,12 @@ const ITEM_CLASS = preload("res://Scenes/Item.tscn")
 var items = []
 var objective
 onready var player = get_node("YSort/player")
-const POSITIONS = [Vector2(-3300, 500), Vector2(-3300, 1050), Vector2(-3300, 100), Vector2(-1250, 1050), Vector2(1250, 1050), Vector2(1500, 1050), 
-	Vector2(1775, 750), Vector2(-1500, 800), Vector2(1050, 1050), Vector2(-1250, 1025), Vector2(4250, 800), Vector2(-4900, 1050), Vector2(-1250, 1050), 
-	Vector2(-1300, 800), Vector2(4500, 1050), Vector2(4250, 1050), Vector2(4500, 800), Vector2(4250, 300), Vector2(-2600, 500), Vector2(-1500, 1050), 
-	Vector2(4500, 500), Vector2(-2350, 1050), Vector2(400, 1050), Vector2(-4000, 500), Vector2(-4000, 1050), Vector2(-4500, 500), Vector2(750, 1100),
-	Vector2(-200, 1100), Vector2(-3200, 1100), Vector2(-5000, 650), Vector2(-4750, 650), Vector2(-5000, -1250), Vector2(-4750, -1300), 
-	Vector2(-5000, 0), Vector2(-4750, -1400), Vector2(-3200, -1450)]
+const POSITIONS = [Vector2(-3300, 500), Vector2(-2500, 1050), Vector2(-2600, 100), Vector2(-1250, 1050), Vector2(1250, 1050), Vector2(1500, 1050), 
+	Vector2(1775, 750), Vector2(-1500, 800), Vector2(1050, 1050), Vector2(-1300, 1050), Vector2(4250, 800), Vector2(-4900, 1050), Vector2(-1250, 1050), 
+	Vector2(-1350, 800), Vector2(4500, 1050), Vector2(4300, 1050), Vector2(4500, 800), Vector2(4250, 300), Vector2(-2400, 500), Vector2(-1500, 1050), 
+	Vector2(4500, 500), Vector2(-2300, 1050), Vector2(-6400, 1050), Vector2(-4100, 500), Vector2(-4000, 1050), Vector2(-4500, 500), Vector2(750, 1100),
+	Vector2(-200, 1050), Vector2(-3200, 1050), Vector2(-5000, 650), Vector2(-4800, 650), Vector2(-4950, 1000), Vector2(-4750, 1000), 
+	Vector2(-5050, 0), Vector2(-4700, 0), Vector2(-3200, 1050)]
 
 # Instances an item of given type and adds it to the scene at the given position (x, y)
 func spawnItem(type:String, position: Vector2):
@@ -24,9 +24,9 @@ func spawnItem(type:String, position: Vector2):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("spawning " + String(items.size()) + " items on " + String(POSITIONS.size()) + " positions")
-	spawnItem("coffee", Vector2(1050, 1050))
+	spawnItem("coffee", Vector2(400, 950))
 	
-	spawnItem("echolocator", Vector2(500, 1050))
+	spawnItem("echolocator", Vector2(-6600, 1050))
 	
 	spawnItem("spring_shoes", Vector2(-500, 1050))
 	
