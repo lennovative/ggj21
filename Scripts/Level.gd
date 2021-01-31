@@ -41,7 +41,7 @@ func _ready():
 	spawnItem("magazine", Vector2(4500, 800))
 #	spawnItem("magnet", Vector2(-, ))
 	spawnItem("mtg_cards", Vector2(4250, 300))
-#	spawnItem("phiranja_flower", Vector2(-, ))
+	spawnItem("phiranja_flower", Vector2(6500, 1000))
 #	spawnItem("picture", Vector2(-, ))
 #	spawnItem("plant", Vector2(-, ))
 	spawnItem("radio", Vector2(-2600, 500))
