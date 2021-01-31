@@ -21,7 +21,6 @@ tracks/0/keys = {
 [node name="Grandma" type="Sprite"]
 texture = ExtResource( 1 )
 hframes = 5
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/speak = SubResource( 1 )

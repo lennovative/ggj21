@@ -31,7 +31,7 @@ func _ready():
 	spawnItem("ice_cubes", Vector2(4500, 1050))
 	spawnItem("keys", Vector2(4250, 1050))
 	spawnItem("yarn", Vector2(750, 1100))
-	spawnItem("tv", Vector2(3750, 1050))
+	#spawnItem("tv", Vector2(3750, 1050))
 	spawnItem("vase_blue", Vector2(-4000, 500))
 	spawnItem("vase_red", Vector2(-4000, 1050))
 	spawnItem("vase_green", Vector2(4500, 500))
@@ -46,8 +46,8 @@ func _ready():
 	spawnItem("walking_aid", Vector2(-200, 1100))
 
 	
-func _process(delta):
-	ambient.set_color(Globals.light_level)
+func adjust_light(light_level: Color):
+	ambient.set_color(light_level)
 
 func start_echolocate():
 	objective.echolocate()

@@ -8,9 +8,10 @@ var acc = 1700
 var items_in_range = []
 var current_item = null
 var item = load("res://Scenes/Item.tscn")
+var can_enter = false
 onready var drop_timer = get_node("drop_timer")
 var sprite_dir = "right"
-onready var level = get_node("/root/Level")
+onready var level = get_node("/root/Game/Level")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,6 +46,7 @@ func _physics_process(delta):
 	vel.y += gravity * delta
 	vel = move_and_slide(vel, Vector2(0, -1))
 	light_loop()
+	enter_loop()
 	item_loop()
 
 
@@ -57,6 +59,10 @@ func sprite_dir_loop():
 func light_loop():
 	var mouse = get_global_mouse_position()
 	get_node("light_cone").look_at(mouse)
+
+func enter_loop():
+	if can_enter and Input.is_action_pressed("door"):
+		level.get_parent().switch_scene()
 
 func item_loop():
 	if Input.is_action_just_pressed("collect"):
@@ -122,7 +128,7 @@ func item_effects():
 					walkspeed = 800
 					get_node("AnimationPlayer").set_speed_scale(2.0)
 				"glasses":
-					Globals.light_level = Color(0.2,0.2,0.2,1)
+					level.adjust_light(Color(0.2,0.2,0.2,1))
 				"vase": 
 					jumpSpeed = 0
 				"radio":
@@ -138,7 +144,7 @@ func item_effects():
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
 		drop_timer.stop()
-		Globals.light_level = Color.black
+		level.adjust_light(Color.black)
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
 		level.stop_echolocate()

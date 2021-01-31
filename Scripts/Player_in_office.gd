@@ -5,6 +5,8 @@ var gravity = Globals.GRAVITY
 var walkspeed = 400
 var acc = 1700
 var sprite_dir = "right"
+var can_enter = false
+var level_path = "res://Scenes/Level.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +29,11 @@ func _physics_process(delta):
 	anim_switch("idle" if vel.x == 0 else "walk")
 	vel.y += gravity * delta
 	vel = move_and_slide(vel, Vector2(0, -1))
+	enter_loop()
+
+func enter_loop():
+	if can_enter and Input.is_action_pressed("door"):
+		get_parent().get_parent().switch_scene()
 
 func sprite_dir_loop():
 	if vel.x > 0:
