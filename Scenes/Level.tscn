@@ -59,8 +59,8 @@ z_index = -2
 position = Vector2( -4854.22, 1209.96 )
 
 [node name="Shelf7" parent="Objects/Shelfs" instance=ExtResource( 6 )]
-position = Vector2( -4849.73, 637.148 )
-scale = Vector2( 0.98, 1 )
+position = Vector2( -4851.31, 639.33 )
+scale = Vector2( 0.9, 0.9 )
 
 [node name="Shelf4" parent="Objects/Shelfs" instance=ExtResource( 6 )]
 position = Vector2( 3778.16, 1248.43 )
@@ -187,7 +187,7 @@ shape = SubResource( 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
 
 [node name="Bounds" type="Node2D" parent="."]
 
