@@ -30,7 +30,7 @@ func _ready():
 	spawnItem("candle_old", Vector2(-5000, 0))
 	spawnItem("cat", Vector2(1775, 750))
 	spawnItem("chest", Vector2(-1500, 800))
-	spawnItem("coffee", Vector2(1050, 1050))
+	spawnItem("coffee", Vector2(425, 1000))
 	spawnItem("creeper_plush", Vector2(-1250, 1025))
 	spawnItem("doll", Vector2(4250, 800))
 	spawnItem("echolocator", Vector2(-6600, 1050))
@@ -57,7 +57,7 @@ func _ready():
 	spawnItem("vase_green", Vector2(-4500, 500))
 #	spawnItem("wrench", Vector2(-, ))
 	spawnItem("yarn", Vector2(750, 1100))
-	spawnItem("walking_aid", Vector2(-200, 1100))
+	spawnItem("walking_aid", Vector2(3250, 1100))
 
 	
 func adjust_light(light_level: Color):
