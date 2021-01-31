@@ -170,5 +170,5 @@ max_distance = 10000.0
 bus = "SFX"
 
 [node name="noise_timer" type="Timer" parent="."]
-[connection signal="timeout" from="drop_timer" to="." method="drop_item"]
+[connection signal="timeout" from="drop_timer" to="." method="_on_drop_timer_timeout"]
 [connection signal="timeout" from="noise_timer" to="." method="play_creepy_noise"]

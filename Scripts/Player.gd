@@ -177,3 +177,8 @@ func item_in_range(item):
 
 func item_out_of_range(item):
 	items_in_range.erase(item)
+
+
+func _on_drop_timer_timeout():
+	if game.current_item.type == "cat":
+		drop_item()
