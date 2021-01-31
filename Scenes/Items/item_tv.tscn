@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Graphics/items/item_tv.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Graphics/exit_light.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphics/light.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Sprite
@@ -16,7 +16,7 @@ func _ready():
 length = 10.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer/Light2D:energy")
+tracks/0/path = NodePath("Light2D:energy")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -44,10 +44,11 @@ autoplay = "idle"
 anims/idle = SubResource( 2 )
 script = SubResource( 3 )
 
-[node name="Light2D" type="Light2D" parent="AnimationPlayer"]
-scale = Vector2( 0.5, 0.5 )
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0.890942, -9.7998 )
+scale = Vector2( 0.845137, 0.653733 )
 z_index = 1
 texture = ExtResource( 2 )
 color = Color( 0.173417, 0.52492, 0.784314, 1 )
-energy = 1.10856
+energy = 1.02875
 mode = 2

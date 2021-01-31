@@ -50,7 +50,7 @@ func _ready():
 	spawnItem("tape", Vector2(-2350, 1050))
 #	spawnItem("tea_cup", Vector2(-, ))
 #	spawnItem("triforce", Vector2(-, ))
-	spawnItem("tv", Vector2(3750, 1050))
+	spawnItem("tv", Vector2(400, 1050))
 #	spawnItem("twig", Vector2(-, ))
 	spawnItem("vase_blue", Vector2(-4000, 500))
 	spawnItem("vase_red", Vector2(-4000, 1050))
