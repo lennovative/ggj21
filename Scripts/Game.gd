@@ -19,7 +19,9 @@ func load_level():
 	add_child(Level)
 
 func switch_scene():
-	first_scene = false
+	if first_scene:
+		$Inventory.get_node("inventory_background").visible = true
+		first_scene = false
 	match current_scene:
 		Scene.OFFICE:
 			self.remove_child(Office)
