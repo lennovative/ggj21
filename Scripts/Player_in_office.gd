@@ -6,6 +6,7 @@ var walkspeed = 430
 var acc = 1700
 var sprite_dir = "left"
 var can_enter = false
+var can_deliver = false
 var room_size = 1920 * 2
 
 # Called when the node enters the scene tree for the first time.
@@ -33,11 +34,16 @@ func _physics_process(delta):
 	vel = move_and_slide(vel, Vector2(0, -1))
 	get_parent().get_node("Camera2D").update_camera(self.position.x)
 	enter_loop()
+	deliver_loop()
 	exit_loop()
 
 func enter_loop():
 	if can_enter and Input.is_action_just_pressed("door"):
 		get_parent().get_parent().switch_scene()
+
+func deliver_loop():
+	if can_deliver and Input.is_action_just_pressed("deliver"):
+		get_parent().get_parent().item_deliver()
 
 func sprite_dir_loop():
 	if vel.x > 0:
