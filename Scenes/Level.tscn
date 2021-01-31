@@ -31,7 +31,7 @@ script = ExtResource( 8 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -10, 1000 )
+position = Vector2( -50, 850 )
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -166,6 +166,7 @@ position = Vector2( 1390.24, 1107.37 )
 z_index = -2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Bounds" type="Node2D" parent="."]
@@ -322,8 +323,9 @@ position = Vector2( 300, 895 )
 z_index = -1
 
 [node name="Text" parent="TextBox" instance=ExtResource( 17 )]
-margin_left = -453.001
-margin_top = -69.7787
-margin_right = -453.001
-margin_bottom = -69.7787
+visible = false
+margin_left = -498.203
+margin_top = -81.6587
+margin_right = -498.203
+margin_bottom = -81.6587
 [connection signal="timeout" from="Echolocate_timer" to="." method="start_echolocate"]
