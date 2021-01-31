@@ -35,7 +35,7 @@ script = ExtResource( 8 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -50, 850 )
+position = Vector2( -10, 1000 )
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -347,8 +347,9 @@ position = Vector2( 300, 895 )
 z_index = -1
 
 [node name="Text" parent="TextBox" instance=ExtResource( 17 )]
-margin_left = -498.203
-margin_top = -81.6587
-margin_right = -498.203
-margin_bottom = -81.6587
+visible = false
+margin_left = -454.203
+margin_top = -59.6587
+margin_right = -454.203
+margin_bottom = -59.6587
 [connection signal="timeout" from="Echolocate_timer" to="." method="start_echolocate"]

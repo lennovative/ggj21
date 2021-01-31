@@ -245,4 +245,5 @@ bus = "ReverbMedium"
 stream = ExtResource( 9 )
 bus = "ReverbMedium"
 [connection signal="timeout" from="drop_timer" to="." method="drop_item"]
+[connection signal="timeout" from="drop_timer" to="." method="_on_drop_timer_timeout"]
 [connection signal="timeout" from="noise_timer" to="." method="play_creepy_noise"]
