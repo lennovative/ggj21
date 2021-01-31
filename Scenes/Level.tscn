@@ -35,7 +35,7 @@ script = ExtResource( 8 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -10, 1000 )
+position = Vector2( 3.34839, 1174.86 )
 
 [node name="Objects" type="Node2D" parent="."]
 
