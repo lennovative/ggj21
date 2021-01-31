@@ -71,6 +71,7 @@ z_index = 1
 texture = ExtResource( 2 )
 color = Color( 0.173417, 0.52492, 0.784314, 1 )
 energy = 1.01714
+
 mode = 2
 
 [node name="StaticPlayer" type="AnimationPlayer" parent="."]
