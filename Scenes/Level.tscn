@@ -186,7 +186,7 @@ position = Vector2( 31.7842, 46.6162 )
 shape = SubResource( 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 
 [node name="Bounds" type="Node2D" parent="."]
 
