@@ -9,8 +9,8 @@ const POSITIONS = [Vector2(-3300, 500), Vector2(-3300, 1050), Vector2(-3300, 100
 	Vector2(1775, 750), Vector2(-1500, 800), Vector2(1050, 1050), Vector2(-1250, 1025), Vector2(4250, 800), Vector2(-4900, 1050), Vector2(-1250, 1050), 
 	Vector2(-1300, 800), Vector2(4500, 1050), Vector2(4250, 1050), Vector2(4500, 800), Vector2(4250, 300), Vector2(-2600, 500), Vector2(-1500, 1050), 
 	Vector2(4500, 500), Vector2(-2350, 1050), Vector2(400, 1050), Vector2(-4000, 500), Vector2(-4000, 1050), Vector2(-4500, 500), Vector2(750, 1100),
-	Vector2(-200, 1100), Vector2(-3200, -1100), Vector2(-3200, -1150), Vector2(-3200, -1200), Vector2(-3200, -1250), Vector2(-3200, -1300), 
-	Vector2(-3200, -1350), Vector2(-3200, -1400), Vector2(-3200, -1450)]
+	Vector2(-200, 1100), Vector2(-3200, 1100), Vector2(-5000, 650), Vector2(-4750, 650), Vector2(-5000, -1250), Vector2(-4750, -1300), 
+	Vector2(-5000, 0), Vector2(-4750, -1400), Vector2(-3200, -1450)]
 
 # Instances an item of given type and adds it to the scene at the given position (x, y)
 func spawnItem(type:String, position: Vector2):
