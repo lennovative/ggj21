@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ggj21"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="res://Scenes/Office.tscn"
 config/icon="res://Assets/Graphics/icon.png"
 
 [autoload]
@@ -27,6 +27,7 @@ Globals="*res://Scripts/Globals.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 
 [input]
 

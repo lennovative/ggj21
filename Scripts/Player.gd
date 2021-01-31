@@ -10,7 +10,6 @@ var current_item = null
 var item = load("res://Scenes/Item.tscn")
 onready var drop_timer = get_node("drop_timer")
 var sprite_dir = "right"
-var stop = true
 onready var level = get_node("/root/Level")
 
 # Called when the node enters the scene tree for the first time.
