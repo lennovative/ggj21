@@ -150,7 +150,7 @@ func item_effects():
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
 		drop_timer.stop()
-		level.adjust_light(Color.black)
+		level.adjust_light(Color(0.03,0.03,0.03,1))
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
 		level.stop_echolocate()
@@ -161,13 +161,13 @@ func start_creepy_noises():
 	$noise_timer.start(rand_range(5,10))
 
 func play_creepy_noise():
-	
-	var noises = $CreepyNoises.get_children()
-	$CreepyNoises.set_position(Vector2(rand_range(-5000,5000), 0))
-	var rand = randi() % noises.size()
-	print("playing noise " + String(rand) + " Dist: " + String(Vector2.ZERO.distance_to($CreepyNoises.get_position())))
-	noises[rand].play()
-	$noise_timer.start(rand_range(5,10))
+	if game.current_item.type == "doll":
+		var noises = $CreepyNoises.get_children()
+		$CreepyNoises.set_position(Vector2(rand_range(-5000,5000), 0))
+		var rand = randi() % noises.size()
+		print("playing noise " + String(rand) + " Dist: " + String(Vector2.ZERO.distance_to($CreepyNoises.get_position())))
+		noises[rand].play()
+		$noise_timer.start(rand_range(5,10))
 	
 func stop_creepy_noises():
 	$noise_timer.stop()
