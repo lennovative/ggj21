@@ -27,7 +27,7 @@ script = ExtResource( 8 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 300, 895 )
+position = Vector2( -50, 850 )
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -93,7 +93,6 @@ position = Vector2( -1303.93, 1219.08 )
 position = Vector2( -2383.15, 1218.13 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Bounds" type="Node2D" parent="."]

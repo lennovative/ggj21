@@ -4,6 +4,7 @@ enum Scene {LEVEL, OFFICE}
 var current_scene = Scene.OFFICE
 var Level = preload("res://Scenes/Level.tscn")
 var Office = preload("res://Scenes/Office.tscn")
+var first_scene = true
 
 func _ready():
 	load_office()
@@ -17,6 +18,7 @@ func load_level():
 	add_child(Level.instance())
 
 func clear():
+	first_scene = false
 	for n in self.get_children():
 		self.remove_child(n)
 		n.queue_free()

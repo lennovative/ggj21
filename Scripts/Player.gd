@@ -61,7 +61,7 @@ func light_loop():
 	get_node("light_cone").look_at(mouse)
 
 func enter_loop():
-	if can_enter and Input.is_action_pressed("door"):
+	if can_enter and Input.is_action_just_pressed("door"):
 		level.get_parent().switch_scene()
 
 func item_loop():

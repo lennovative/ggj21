@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Office.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player_in_office.tscn" type="PackedScene" id=2]
@@ -6,9 +6,26 @@
 [ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Text.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Graphics/bg_office2.jpg" type="Texture" id=6]
+[ext_resource path="res://Scenes/Grandma.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2288, 71.363 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Camera2D
+
+const room_size = 1920 * 2
+var border1 = 1920 / 2
+var border2 = room_size - border1
+
+func update_camera(player_x):
+	if player_x < border1:
+		self.position.x = border1
+	elif player_x > border2:
+		self.position.x = border2
+	else:
+		self.position.x = player_x
+"
 
 [node name="Office" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,7 +37,6 @@ offset = Vector2( 960, 540 )
 
 [node name="bg_office2" type="Sprite" parent="."]
 position = Vector2( 1920, 0 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( 960, 540 )
 
@@ -34,7 +50,7 @@ position = Vector2( 1992, 992 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1248, 568 )
+position = Vector2( 920, 520 )
 z_index = 10
 
 [node name="TextBox" type="Node2D" parent="."]
@@ -46,3 +62,12 @@ margin_left = 768.0
 margin_top = 400.0
 margin_right = 768.0
 margin_bottom = 400.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+script = SubResource( 2 )
+
+[node name="Grandma" parent="." instance=ExtResource( 7 )]
+position = Vector2( 168, 616 )
+z_index = 4
