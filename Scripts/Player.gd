@@ -141,6 +141,8 @@ func item_effects():
 				"walking_aid":
 					walkspeed = 200
 					get_node("AnimationPlayer").set_speed_scale(0.5)
+				"ice_cubes":
+					acc = 300
 	else:
 		walkspeed = 400
 		get_node("AnimationPlayer").set_speed_scale(1.0)
@@ -149,6 +151,7 @@ func item_effects():
 		jumpSpeed = 800
 		get_node("RadioCommPlayer").stop()
 		level.stop_echolocate()
+		acc = 1700
 
 
 func item_in_range(item):
