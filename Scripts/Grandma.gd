@@ -1,7 +1,7 @@
 extends Sprite
 
 var text_nice = "There it is! I've been looking for that thing since ages! I left a few more requests at your bulletin. Call me, once you found something else that's mine."
-var text_wrong = "... What is that? That's not mine... Did you really summon an old lady all the way out here to mess with her??? That's mean! Call me, when you find something that -actually- belongs to me."
+var text_wrong = "... What is that? That's not mine... Can you go back and make sure, that ~really~ nobody found what I am looking for? Some citizen of Townville must have found it and brought it here... Right?"
 var text_no_item = "What's up, hun? Don't you know what to do? I left a few requests at the bulletin. Just look, if you can find some of it somewhere in the storage. Remember to take your flashlight, it's dark out there. Collect items by pressing E."
 
 func speak(type):
