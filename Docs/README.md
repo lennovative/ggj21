@@ -1,6 +1,6 @@
 # GlobalGameJam 2021
 
-![GGJ 2021 Logo](https://s3-us-west-1.amazonaws.com/ggj/site/site-images/GGJ00_Logo_Light.svg "GGJ 2021 Logo")
+![GGJ 2021 Logo](https://s3-us-west-1.amazonaws.com/ggj/site/site-images/GGJ00_Logo_Dark.svg "GGJ 2021 Logo")
 
 
 
@@ -10,7 +10,8 @@
 |<kbd>←</kbd> <kbd>→ </kbd> | Move |
 |<kbd>Space</kbd> | Jump |
 | <kbd>E</kbd> | Pick up / drop item |
-| <kbd>↵ </kbd> | Change stage |
+| <kbd>Q </kbd> | Change stage |
+| <kbd>Mouse </kbd> | Move flashlight |
 
 ## Contributers
 * Camaika

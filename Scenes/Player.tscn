@@ -4,7 +4,6 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Graphics/light_cone.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/radiocommunication.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Sounds/globalgamejam2021_loop.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Graphics/light.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -149,9 +148,9 @@ stream = ExtResource( 4 )
 bus = "SFX"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
 autoplay = true
 bus = "Music"
+
 [node name="character_light" type="Light2D" parent="."]
 position = Vector2( 2.09982, -246.734 )
 scale = Vector2( 0.688301, 1.07177 )

@@ -40,9 +40,10 @@ func _physics_process(delta):
 			anim_switch("walk")
 		if Input.is_action_pressed("jump_button"):
 			vel.y -= jumpSpeed
-			anim_switch("jump")
 		if Input.is_action_pressed("down_button"):
 			self.position.y += 5
+	else:
+		anim_switch("jump")
 	vel.y += gravity * delta
 	vel = move_and_slide(vel, Vector2(0, -1))
 	light_loop()
