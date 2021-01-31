@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ggj21"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://Scenes/Splashscreens.tscn"
 config/icon="res://Assets/Graphics/icon.png"
 
 [autoload]
@@ -27,6 +27,7 @@ Globals="*res://Scripts/Globals.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
