@@ -69,6 +69,5 @@ current = true
 script = SubResource( 2 )
 
 [node name="Grandma" parent="." instance=ExtResource( 7 )]
-visible = false
 position = Vector2( 168, 616 )
 z_index = 4
