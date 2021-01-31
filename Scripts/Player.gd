@@ -110,11 +110,12 @@ func drop_item():
 	#print("dropping item: " + current_item)
 	#var spawn_item = item.instance()
 	#spawn_item.init(current_item)
-	game.current_item.set_position(Vector2(self.get_position().x, self.get_position().y - 100))
-	get_parent().add_child(game.current_item)
-	game.current_item = null
-	update_inventory_sprite()
-	item_effects()
+	if game.current_item != null:
+		game.current_item.set_position(Vector2(self.get_position().x, self.get_position().y - 100))
+		get_parent().add_child(game.current_item)
+		game.current_item = null
+		update_inventory_sprite()
+		item_effects()
 
 # sets the current item's effect:
 func item_effects():
