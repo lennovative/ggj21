@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Items/Plattform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -20,10 +20,13 @@
 [ext_resource path="res://Assets/Graphics/bg_archive.jpg" type="Texture" id=18]
 [ext_resource path="res://Assets/Graphics/bg_up2.jpg" type="Texture" id=19]
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 323.881, 266.598 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -9.67834, -211.005, -9.00366, 407.165, 5.01611, 407.462, 5.45667, -212.417, 5.45667, -212.417, 3.56476, -212.417, 3.56476, -212.417 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 537.77, 10 )
 
 [node name="Level" type="Node2D"]
@@ -173,6 +176,15 @@ z_index = 1
 position = Vector2( 1390.24, 1107.37 )
 z_index = -2
 
+[node name="Area2D_Reverb" type="Area2D" parent="Objects"]
+position = Vector2( -5784.06, 1155.3 )
+audio_bus_override = true
+audio_bus_name = "ReverbLarge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Area2D_Reverb"]
+position = Vector2( 31.7842, 46.6162 )
+shape = SubResource( 1 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0, 0, 0, 1 )
@@ -193,7 +205,7 @@ scale = Vector2( 4.48, 3 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Bounds/Wall_right2"]
 position = Vector2( 2.04956, -96.4228 )
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )
 
 [node name="Floor" type="StaticBody2D" parent="Bounds"]
 collision_layer = 3
@@ -202,7 +214,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Floor"]
 position = Vector2( 0, 1250 )
 scale = Vector2( 13, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -20
