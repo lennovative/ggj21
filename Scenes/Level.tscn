@@ -73,7 +73,11 @@ position = Vector2( 1084.71, 1181.59 )
 collision_mask = 3
 
 [node name="Plattform11" parent="Objects" instance=ExtResource( 1 )]
-position = Vector2( -4885.81, 1193 )
+position = Vector2( -6594.51, 1196.36 )
+collision_mask = 3
+
+[node name="Plattform12" parent="Objects" instance=ExtResource( 1 )]
+position = Vector2( -4107.25, 614.943 )
 collision_mask = 3
 
 [node name="ExitSign" parent="Objects" instance=ExtResource( 4 )]
@@ -92,6 +96,14 @@ position = Vector2( -2383.15, 1218.13 )
 
 [node name="Shelf3" parent="Objects/Shelfs" instance=ExtResource( 6 )]
 position = Vector2( -3911.35, 1218.94 )
+z_index = -2
+
+[node name="Shelf6" parent="Objects/Shelfs" instance=ExtResource( 6 )]
+position = Vector2( -4854.22, 1209.96 )
+
+[node name="Shelf7" parent="Objects/Shelfs" instance=ExtResource( 6 )]
+position = Vector2( -4849.73, 637.148 )
+scale = Vector2( 0.98, 1 )
 
 [node name="Shelf4" parent="Objects/Shelfs" instance=ExtResource( 6 )]
 position = Vector2( 3778.16, 1248.43 )
@@ -100,7 +112,6 @@ position = Vector2( 3778.16, 1248.43 )
 position = Vector2( 4361.19, 1251.26 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Bounds" type="Node2D" parent="."]
@@ -176,7 +187,7 @@ z_index = -3
 texture = ExtResource( 15 )
 
 [node name="Flat_background_color" type="Sprite" parent="Background"]
-scale = Vector2( 3000, 1000 )
+scale = Vector2( 2734.12, 1000 )
 z_index = -20
 texture = ExtResource( 7 )
 __meta__ = {
